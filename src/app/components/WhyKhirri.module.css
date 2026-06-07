@@ -1,0 +1,144 @@
+.section {
+  padding-block: var(--space-24);
+  background: var(--surface-tan);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+/* --- Image Column --- */
+.imageCol { position: relative; }
+
+.imageStack {
+  position: relative;
+  aspect-ratio: 4/5;
+}
+
+.imageMain {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.imageInset {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 180px;
+  height: 180px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 4px solid var(--surface-white);
+  box-shadow: var(--shadow-md);
+}
+
+.img {
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.imageMain:hover .img { transform: scale(1.04); }
+
+/* --- Content Column --- */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.heading {
+  font-size: clamp(1.875rem, 3vw, 2.75rem);
+  line-height: 1.15;
+}
+
+.intro {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* --- Reasons --- */
+.reasons {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.reason {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+}
+
+.reasonIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--surface-white);
+  color: var(--brand-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-spring);
+}
+.reason:hover .reasonIcon {
+  background: var(--brand-orange);
+  color: #fff;
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.reasonTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.reasonDesc {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 3px;
+  line-height: 1.55;
+}
+
+/* --- Cert Points --- */
+.certList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--surface-white);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--brand-tan-dark);
+}
+
+.certPoint {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.certIcon { color: var(--color-success); flex-shrink: 0; }
+
+.cta { width: fit-content; }
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  .imageStack { aspect-ratio: 16/9; }
+  .imageInset { display: none; }
+}

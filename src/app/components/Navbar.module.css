@@ -1,0 +1,204 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--nav-height);
+  background: rgba(253, 246, 236, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.navbar.scrolled {
+  background: rgba(253, 246, 236, 0.97);
+  border-bottom-color: var(--brand-tan-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-6);
+}
+
+/* --- Logo --- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--brand-brown);
+  color: #f5c88a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform var(--transition-spring);
+}
+.logo:hover .logoIcon { transform: rotate(-8deg) scale(1.05); }
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logoName {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--brand-brown);
+  letter-spacing: 0.06em;
+}
+
+.logoTagline {
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* --- Desktop Nav --- */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.navLink {
+  position: relative;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  width: 16px;
+  height: 2px;
+  background: var(--brand-orange);
+  border-radius: 1px;
+  transition: transform var(--transition-base);
+}
+
+.navLink:hover { color: var(--brand-brown); }
+.navLink:hover::after { transform: translateX(-50%) scaleX(1); }
+
+.navLinkActive {
+  color: var(--brand-brown);
+  font-weight: 600;
+}
+.navLinkActive::after { transform: translateX(-50%) scaleX(1); }
+
+/* --- CTA Area --- */
+.navCta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.ctaBtn { display: flex; }
+
+/* --- Hamburger --- */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--brand-brown);
+  transition: background var(--transition-fast);
+}
+.hamburger:hover { background: var(--brand-tan); }
+
+/* --- Mobile Menu --- */
+.mobileMenu {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: var(--surface-cream);
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--nav-height) + var(--space-6)) var(--space-6) var(--space-8);
+  transform: translateX(100%);
+  transition: transform var(--transition-slow);
+  pointer-events: none;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+  pointer-events: all;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  flex: 1;
+}
+
+.mobileNavLink {
+  display: block;
+  padding: var(--space-4) var(--space-5);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+  opacity: 0;
+  animation: slideIn 0.3s ease forwards;
+}
+.mobileMenuOpen .mobileNavLink { opacity: 1; }
+
+.mobileNavLink:hover {
+  background: var(--brand-tan);
+  color: var(--brand-brown);
+}
+
+.mobileCta {
+  margin-top: auto;
+  width: 100%;
+  justify-content: center;
+  padding: var(--space-4);
+  font-size: 1rem;
+  border-radius: var(--radius-lg);
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+  .desktopNav { display: none; }
+  .ctaBtn { display: none; }
+  .hamburger { display: flex; }
+}
+
+@media (min-width: 901px) {
+  .mobileMenu { display: none; }
+}

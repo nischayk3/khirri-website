@@ -1,0 +1,62 @@
+.trustBar {
+  background: var(--surface-white);
+  border-top: 1px solid var(--brand-tan-dark);
+  border-bottom: 1px solid var(--brand-tan-dark);
+  padding-block: var(--space-6);
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+}
+
+.pillar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast);
+}
+.pillar:hover { background: var(--brand-tan); }
+
+.iconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 105, 0, 0.1);
+  color: var(--brand-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), transform var(--transition-spring);
+}
+.pillar:hover .iconWrap {
+  background: var(--brand-orange);
+  color: #fff;
+  transform: scale(1.08);
+}
+
+.pillarTitle {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.pillarSub {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .pillars { grid-template-columns: repeat(2, 1fr); gap: var(--space-4); }
+}
+
+@media (max-width: 480px) {
+  .pillars { grid-template-columns: 1fr; }
+}
