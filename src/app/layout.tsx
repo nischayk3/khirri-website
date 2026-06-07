@@ -64,7 +64,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["FoodStore", "WholesaleStore"],
+      "@type": ["FoodStore", "WholesaleStore", "GroceryStore"],
       "@id": "https://khirri.com/#business",
       name: "Khirri phool makhana",
       description:

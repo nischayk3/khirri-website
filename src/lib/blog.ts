@@ -11,6 +11,62 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "makhana-prices-bangalore-jaipur",
+    title: "Wholesale Makhana Prices in Bangalore & Jaipur (2026 Guide)",
+    category: "B2B Insights",
+    date: "2026-06-07",
+    readTime: "3 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Discover current bulk makhana prices in Bangalore and Jaipur. Learn how to source directly from Bihar to maximize your retail margins.",
+    content: `
+When it comes to sourcing Phool Makhana (fox nuts) for wholesale or dark stores, the prices in major metropolitan hubs like **Bangalore** and **Jaipur** can vary wildly. Middlemen, fragmented logistics, and grading inconsistencies often inflate the cost per kg.
+
+At **Khirri**, we bypass the entire traditional supply chain. Because we source straight from the harvest ponds in Bihar, our bulk makhana prices in Bangalore and Jaipur are highly competitive for B2B buyers.
+
+### Why do Makhana Prices Fluctuate?
+Makhana is an agricultural commodity heavily dependent on the monsoon and harvesting conditions in Bihar. When crop yields are low, prices surge. Furthermore, retail prices in Bangalore are often 2x higher than farm-gate prices due to multiple layers of distributors.
+
+### Typical B2B Grading & Pricing
+When you buy bulk Makhana from Khirri in Bangalore or Jaipur, you are paying for exact grades, not a mixed bag of broken pieces.
+1. **16mm+ Hand-picked:** The highest premium grade. Best for luxury retail packing and export.
+2. **12mm+ Standard:** The ideal grade for flavored makhana processing and dark-store rapid delivery.
+3. **Broken/Churi:** Used primarily for makhana powder or culinary gravies.
+
+### How to Get the Best Price in Bangalore
+If you are running a dry fruit store, a quick-commerce app, or a healthy snacking brand in Bangalore, the key to better margins is direct sourcing. Khirri manages the entire freight from Bihar to Karnataka, ensuring you get harvest-fresh stock without the massive markup of local Bangalore wholesalers.
+
+**[Contact Khirri Today](https://wa.me/918949359415)** to get today's live bulk pricing for delivery in Jaipur or Bangalore!
+    `,
+  },
+  {
+    slug: "farm-to-store-bihar-makhana-logistics",
+    title: "Farm to Store: How We Ship Bihar Makhana to Bangalore & Jaipur",
+    category: "B2B Insights",
+    date: "2026-06-06",
+    readTime: "4 min read",
+    author: "Khirri Supply Chain",
+    excerpt: "Understanding the logistics of Phool Makhana. How Khirri ensures harvest-fresh fox nuts reach dark stores in Bangalore and Jaipur safely.",
+    content: `
+More than 85% of the world's Phool Makhana is grown in the wetlands of North Bihar. Yet, the demand for this superfood is skyrocketing in major urban centers like **Bangalore**, Mumbai, and **Jaipur**. 
+
+So, how does a highly moisture-sensitive, voluminous product travel thousands of kilometers without losing its crunch?
+
+### The Challenge of Makhana Logistics
+Makhana is incredibly light but takes up a massive amount of volume. This makes freight expensive if not packed correctly. Additionally, makhana acts like a sponge—if it absorbs moisture during transit from Bihar to Bangalore, it loses its signature "crunch" and becomes chewy.
+
+### The Khirri Cold-Chain & Packing Process
+At **Khirri**, we have perfected the art of Makhana logistics:
+1. **Moisture-Lock Packing:** The moment the makhana is popped and graded at our facilities in Bihar, it is sealed in specialized moisture-proof bags.
+2. **Volumetric Optimization:** We utilize custom B2B cartons designed to maximize truck volume, bringing down the per-kg freight cost for our buyers in Jaipur and Bangalore.
+3. **Direct Freight:** We skip regional hubs. Our trucks go direct from Bihar to our distribution nodes in Rajasthan and Karnataka.
+
+### Supplying Dark Stores & Quick Commerce
+For our B2B partners running dark stores in Bangalore and Jaipur, consistent supply is critical. We act as a reliable backend partner, ensuring that your 10-minute delivery apps never show "Out of Stock" for premium Khirri fox nuts.
+
+Looking for a reliable supply chain partner? Partner with Khirri for seamless Bihar-to-Bangalore and Bihar-to-Jaipur logistics.
+    `,
+  },
+  {
     slug: "health-benefits-of-makhana",
     title: "10 Proven Health Benefits of Eating Makhana Every Day",
     category: "Health & Nutrition",

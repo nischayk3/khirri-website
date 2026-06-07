@@ -1,0 +1,187 @@
+.main {
+  min-height: 100vh;
+  padding-top: 80px; /* Offset for fixed navbar */
+  background-color: #faf7f2;
+}
+
+.hero {
+  background: linear-gradient(135deg, #4a2e15 0%, #2a1a0c 100%);
+  color: white;
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: #e5b869; /* Khirri Gold */
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #e0e0e0;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.ctaGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background-color: #e5b869;
+  color: #2a1a0c;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(229, 184, 105, 0.3);
+}
+
+.primaryBtn:hover {
+  background-color: #d4a758;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(229, 184, 105, 0.4);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contentSection {
+  padding: 6rem 0;
+  background-color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.textContent h2 {
+  font-size: 2.5rem;
+  color: #2a1a0c;
+  margin-bottom: 1.5rem;
+}
+
+.textContent p {
+  font-size: 1.1rem;
+  color: #4a4a4a;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+}
+
+.benefitsList li {
+  font-size: 1.1rem;
+  color: #2a1a0c;
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.infoCard {
+  background-color: #faf7f2;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid #e5b869;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.infoCard h3 {
+  color: #2a1a0c;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.infoCard p {
+  color: #4a4a4a;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.addressBox {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  font-style: italic;
+}
+
+.faqSection {
+  padding: 6rem 0;
+  background-color: #faf7f2;
+}
+
+.faqSection h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2a1a0c;
+  margin-bottom: 3rem;
+}
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.faqCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.faqCard:hover {
+  transform: translateY(-5px);
+}
+
+.faqCard h4 {
+  color: #4a2e15;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.faqCard p {
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .faqGrid {
+    grid-template-columns: 1fr;
+  }
+}
