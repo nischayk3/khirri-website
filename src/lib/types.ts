@@ -140,6 +140,8 @@ export type OrderStatus =
   | "pending"
   | "confirmed"
   | "processing"
+  | "PROCESSING"
+  | "READY_TO_SHIP"
   | "shipped"
   | "delivered"
   | "cancelled"
