@@ -164,6 +164,9 @@ export interface Order {
   createdAt: string;
   timestamp?: string;
   estimatedDelivery?: string;
+  id?: string;
+  shiprocketOrderId?: string | number;
+  shiprocketShipmentId?: string | number;
 }
 
 // ── Shipping Types ──────────────────────────────────────
