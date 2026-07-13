@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart";
 import { AuthProvider } from "@/lib/auth";
@@ -137,6 +138,7 @@ export default function RootLayout({
           </CartProvider>
         </AuthProvider>
         <Analytics />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );
