@@ -17,8 +17,14 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Prevent duplicate initialization during hot reload
-const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-const auth = getAuth(app);
+let app: any;
+let auth: any;
+
+try {
+  app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+  auth = getAuth(app);
+} catch (error) {
+  console.error("Firebase Client SDK Initialization Error:", error);
+}
 
 export { app, auth };
