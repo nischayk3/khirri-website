@@ -160,6 +160,7 @@ export interface Order {
   razorpayOrderId?: string;
   razorpayPaymentId?: string;
   createdAt: string;
+  timestamp?: string;
   estimatedDelivery?: string;
 }
 
