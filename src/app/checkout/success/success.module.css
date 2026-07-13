@@ -1,0 +1,107 @@
+.main {
+  min-height: 100vh;
+  padding-top: calc(var(--nav-height) + var(--space-12));
+  padding-bottom: var(--space-16);
+  background: var(--surface-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 var(--space-4);
+}
+
+.card {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-8);
+  box-shadow: var(--shadow-xl);
+  text-align: center;
+  border: 1px solid var(--brand-tan-dark);
+}
+
+.iconWrap {
+  display: inline-flex;
+  margin-bottom: var(--space-6);
+  animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.icon {
+  color: var(--color-success);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  color: var(--brand-brown);
+  margin-bottom: var(--space-3);
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.orderBox {
+  background: var(--surface-cream);
+  border: 1px dashed var(--brand-tan-dark);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-8);
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.orderLabel {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.orderValue {
+  font-family: monospace;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.btn {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: var(--space-8) var(--space-6);
+  }
+  .title {
+    font-size: 1.75rem;
+  }
+}

@@ -1,22 +1,46 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { Menu, X, PhoneCall } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Menu, X, ShoppingCart, User, LogOut, Package, ChevronDown } from "lucide-react";
+import { useCart } from "@/lib/cart";
+import { useAuth } from "@/lib/auth";
 import styles from "./Navbar.module.css";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Products", href: "#products" },
-  { label: "Why Khirri", href: "#why-khirri" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Shop", href: "/shop" },
+  { label: "Why Khirri", href: "/#why-khirri" },
+  { label: "About", href: "/#about" },
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("Home");
+  const [accountOpen, setAccountOpen] = useState(false);
+  const { itemCount, setCartOpen } = useCart();
+  const { isLoggedIn, phoneNumber, setAuthModalOpen, logout } = useAuth();
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) return pathname === "/";
+    if (href === "/") return pathname === "/";
+    return pathname.startsWith(href);
+  };
+
+  // Close dropdown on outside click
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setAccountOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -33,8 +57,7 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const handleNavClick = (label: string) => {
-    setActiveLink(label);
+  const handleNavClick = () => {
     setMenuOpen(false);
   };
 
@@ -43,7 +66,7 @@ export default function Navbar() {
       <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ""}`} role="banner">
         <div className={`container ${styles.inner}`}>
           {/* Logo */}
-          <a href="/#home" className={styles.logo} aria-label="Khirri — Home">
+          <Link href="/#home" className={styles.logo} aria-label="Khirri — Home">
             <div className={styles.logoIconWrap} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Image
                 src="/khirri-logo.png"
@@ -58,34 +81,87 @@ export default function Navbar() {
               <span className={styles.logoName}>KHIRRI</span>
               <span className={styles.logoTagline}>Phool Makhana</span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav */}
           <nav className={styles.desktopNav} aria-label="Main navigation">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
-                className={`${styles.navLink} ${activeLink === link.label ? styles.navLinkActive : ""}`}
-                onClick={() => handleNavClick(link.label)}
+                className={`${styles.navLink} ${isActive(link.href) ? styles.navLinkActive : ""}`}
+                onClick={handleNavClick}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
           {/* CTA */}
           <div className={styles.navCta}>
-            <a
-              href="https://wa.me/918949359415?text=Hi%20Khirri%2C%20I%27d%20like%20to%20enquire%20about%20Makhana."
+            <Link
+              href="/shop"
               className={`btn btn-primary btn-sm ${styles.ctaBtn}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Enquire Now via WhatsApp"
+              aria-label="Shop Now"
             >
-              <PhoneCall size={15} />
-              <span>Enquire Now</span>
-            </a>
+              <ShoppingCart size={15} />
+              <span>Shop Now</span>
+            </Link>
+
+            {/* Account / Login Button */}
+            {isLoggedIn ? (
+              <div className={styles.accountWrap} ref={dropdownRef}>
+                <button
+                  className={styles.accountBtn}
+                  onClick={() => setAccountOpen(!accountOpen)}
+                  aria-label="My Account"
+                >
+                  <User size={18} />
+                  <span className={styles.accountPhone}>
+                    {phoneNumber ? phoneNumber.slice(-4) : "Account"}
+                  </span>
+                  <ChevronDown size={14} className={accountOpen ? styles.chevronUp : ""} />
+                </button>
+                {accountOpen && (
+                  <div className={styles.dropdown}>
+                    <Link
+                      href="/my-orders"
+                      className={styles.dropdownItem}
+                      onClick={() => setAccountOpen(false)}
+                    >
+                      <Package size={16} />
+                      My Orders
+                    </Link>
+                    <button
+                      className={styles.dropdownItem}
+                      onClick={() => { logout(); setAccountOpen(false); }}
+                    >
+                      <LogOut size={16} />
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <button
+                className={styles.loginBtn}
+                onClick={() => setAuthModalOpen(true)}
+                aria-label="Login"
+              >
+                <User size={16} />
+                <span>Login</span>
+              </button>
+            )}
+
+            {/* Cart Button */}
+            <button
+              className={styles.cartBtn}
+              onClick={() => setCartOpen(true)}
+              aria-label={`Open cart with ${itemCount} items`}
+            >
+              <ShoppingCart size={22} />
+              {itemCount > 0 && <span className={styles.cartBadge}>{itemCount}</span>}
+            </button>
 
             {/* Hamburger */}
             <button
@@ -109,26 +185,52 @@ export default function Navbar() {
       >
         <nav className={styles.mobileNav} aria-label="Mobile navigation">
           {navLinks.map((link, i) => (
-            <a
+            <Link
               key={link.label}
               href={link.href}
               className={styles.mobileNavLink}
               style={{ animationDelay: `${i * 60}ms` }}
-              onClick={() => handleNavClick(link.label)}
+              onClick={handleNavClick}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="https://wa.me/918949359415?text=Hi%20Khirri%2C%20I%27d%20like%20to%20enquire%20about%20Makhana."
+          {/* Mobile Login/Account */}
+          {isLoggedIn ? (
+            <>
+              <Link
+                href="/my-orders"
+                className={styles.mobileNavLink}
+                style={{ animationDelay: `${navLinks.length * 60}ms` }}
+                onClick={() => setMenuOpen(false)}
+              >
+                My Orders
+              </Link>
+              <button
+                className={styles.mobileNavLink}
+                style={{ animationDelay: `${(navLinks.length + 1) * 60}ms` }}
+                onClick={() => { logout(); setMenuOpen(false); }}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <button
+              className={styles.mobileNavLink}
+              style={{ animationDelay: `${navLinks.length * 60}ms` }}
+              onClick={() => { setAuthModalOpen(true); setMenuOpen(false); }}
+            >
+              Login / Sign Up
+            </button>
+          )}
+          <Link
+            href="/shop"
             className={`btn btn-primary ${styles.mobileCta}`}
-            target="_blank"
-            rel="noopener noreferrer"
             onClick={() => setMenuOpen(false)}
           >
-            <PhoneCall size={16} />
-            Enquire Now
-          </a>
+            <ShoppingCart size={16} />
+            Shop Now
+          </Link>
         </nav>
       </div>
     </>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import {
   Phone,
   MessageCircle,
@@ -79,14 +80,13 @@ export default function ContactCTA() {
 
             {/* CTA buttons */}
             <div className={styles.ctaButtons}>
-              <a
-                href="tel:+918949359415"
-                className={`btn btn-primary btn-lg ${styles.phoneBtn}`}
-                id="contact-phone-btn"
+              <Link
+                href="/shop"
+                className={`btn btn-primary btn-lg`}
+                id="contact-shop-btn"
               >
-                <Phone size={18} />
-                +91 89493 59415
-              </a>
+                Shop Online
+              </Link>
               <a
                 href="https://wa.me/918949359415?text=Hi%20Khirri%2C%20I%27d%20like%20to%20enquire%20about%20bulk%20Makhana."
                 className={`btn btn-outline-white btn-lg`}

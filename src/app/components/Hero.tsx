@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, ShoppingBag, FileText, ShieldCheck, ArrowDown } from "lucide-react";
 import styles from "./Hero.module.css";
 
@@ -68,22 +69,22 @@ export default function Hero() {
           </p>
 
           <div className={`reveal reveal-delay-3 ${styles.ctaRow}`}>
-            <a
-              href="#contact"
+            <Link
+              href="/shop"
               className="btn btn-primary btn-lg"
-              id="hero-bulk-order-cta"
+              id="hero-shop-now-cta"
             >
               <ShoppingBag size={18} />
-              Place a Bulk Order
-            </a>
-            <a
-              href="#products"
+              Shop Now
+            </Link>
+            <Link
+              href="/#products"
               className="btn btn-secondary btn-lg"
               id="hero-view-products-cta"
             >
               <FileText size={18} />
               View Products
-            </a>
+            </Link>
           </div>
 
           <div className={`reveal reveal-delay-4 ${styles.statsRow}`}>

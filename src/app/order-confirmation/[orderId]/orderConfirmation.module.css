@@ -1,0 +1,323 @@
+/* ============================================================
+   Order Confirmation — Styles
+   ============================================================ */
+
+.main {
+  padding-top: calc(var(--nav-height) + var(--space-8));
+  padding-bottom: var(--space-16);
+  background: var(--surface-cream);
+  min-height: 100vh;
+}
+
+.notFound {
+  text-align: center;
+  padding: var(--space-20) 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--text-muted);
+}
+
+.notFound h1 {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--brand-brown);
+}
+
+/* ── Success Hero ──────────────────────────────────── */
+.successHero {
+  text-align: center;
+  margin-bottom: var(--space-12);
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(22, 163, 74, 0.1);
+  color: var(--color-success);
+  border-radius: var(--radius-full);
+  animation: popIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes popIn {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.successTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: 800;
+  color: var(--brand-brown);
+  line-height: 1.2;
+}
+
+.successSubtitle {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  margin-top: var(--space-3);
+  max-width: 520px;
+  margin-inline: auto;
+  line-height: 1.6;
+}
+
+/* ── Content Grid ──────────────────────────────────── */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* ── Order Card ────────────────────────────────────── */
+.orderCard {
+  background: var(--surface-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--brand-tan);
+  overflow: hidden;
+}
+
+.orderHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-6);
+  background: var(--surface-cream);
+  border-bottom: 1px solid var(--brand-tan);
+}
+
+.orderIdLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 600;
+}
+
+.orderId {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+.copyBtn {
+  padding: var(--space-1);
+  color: var(--text-light);
+  transition: color var(--transition-fast);
+}
+
+.copyBtn:hover {
+  color: var(--brand-orange);
+}
+
+.statusBadge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-success);
+  background: rgba(22, 163, 74, 0.1);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── Sections ──────────────────────────────────────── */
+.itemsSection,
+.summarySection,
+.addressSection {
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--brand-tan);
+}
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+  margin-bottom: var(--space-4);
+}
+
+/* ── Items ─────────────────────────────────────────── */
+.itemList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.itemImage {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: var(--surface-cream);
+  flex-shrink: 0;
+  border: 1px solid var(--brand-tan);
+}
+
+.itemImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemInfo {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--brand-brown);
+}
+
+.itemWeight {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.itemPrice {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+  flex-shrink: 0;
+}
+
+/* ── Summary ───────────────────────────────────────── */
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: var(--space-1) 0;
+}
+
+.discountRow {
+  color: var(--color-success);
+}
+
+.free {
+  font-weight: 700;
+  color: var(--color-success);
+}
+
+.totalRow {
+  border-top: 1px solid var(--brand-tan);
+  padding-top: var(--space-3);
+  margin-top: var(--space-2);
+  font-weight: 700;
+  color: var(--brand-brown);
+  font-size: 1rem;
+}
+
+/* ── Address ───────────────────────────────────────── */
+.addressName {
+  font-weight: 600;
+  color: var(--brand-brown);
+  font-size: 0.9375rem;
+}
+
+.addressText {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-top: var(--space-1);
+}
+
+.addressPhone {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+/* ── Delivery Info ─────────────────────────────────── */
+.deliveryInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  background: rgba(255, 105, 0, 0.04);
+}
+
+.deliveryInfo svg {
+  color: var(--brand-orange);
+  flex-shrink: 0;
+}
+
+.deliveryTitle {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.deliveryDays {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+}
+
+/* ── Actions Column ────────────────────────────────── */
+.actionsCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.actionCard {
+  background: var(--surface-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--brand-tan);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.actionIcon {
+  color: var(--brand-orange);
+  margin-bottom: var(--space-3);
+}
+
+.actionTitle {
+  font-family: var(--font-heading);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--brand-brown);
+  margin-bottom: var(--space-2);
+}
+
+.actionText {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 900px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .orderHeader {
+    flex-direction: column;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+}

@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
+import { CartProvider } from "@/lib/cart";
+import { AuthProvider } from "@/lib/auth";
+import CartDrawer from "./components/CartDrawer";
+import AuthModal from "./components/AuthModal";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://khirri.com"),
@@ -125,7 +129,13 @@ export default function RootLayout({
         />
       </head>
       <body>
-        {children}
+        <AuthProvider>
+          <CartProvider>
+            {children}
+            <CartDrawer />
+            <AuthModal />
+          </CartProvider>
+        </AuthProvider>
         <Analytics />
       </body>
     </html>

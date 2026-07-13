@@ -1,13 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./Footer.module.css";
 
 const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "Products", href: "#products" },
-  { label: "Why Khirri", href: "#why-khirri" },
-  { label: "About", href: "#about" },
-  { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/#home" },
+  { label: "Shop", href: "/shop" },
+  { label: "Why Khirri", href: "/#why-khirri" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 // Inline SVGs for social platforms not in lucide-react v1
@@ -108,9 +108,9 @@ export default function Footer() {
             <ul role="list">
               {navLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href} className={styles.navLink}>
+                  <Link href={link.href} className={styles.navLink}>
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

@@ -1,82 +1,22 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import { ArrowRight, ShoppingBag } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ShoppingBag, Eye } from "lucide-react";
+import { products, getFeaturedProducts, formatPrice, getDefaultVariant } from "@/lib/products";
+import { useCart } from "@/lib/cart";
 import styles from "./Products.module.css";
-
-const products = [
-  {
-    id: "product-raw-makhana",
-    name: "Raw Phool Makhana",
-    tagline: "Unroasted · Farm fresh · 200g / 500g / 1kg packs",
-    type: "Best Seller",
-    badge: "Best Seller",
-    badgeClass: "orange",
-    image:
-      "/images/products/raw_makhana.png",
-    imageAlt: "Khirri Raw Phool Makhana — premium handpicked fox nuts",
-  },
-  {
-    id: "product-roasted-makhana",
-    name: "Roasted Makhana Flavors",
-    tagline: "Peri Peri · Cheese · Pudina · 70g / 75g packs",
-    type: "Snack Range",
-    badge: "New",
-    badgeClass: "orange",
-    image:
-      "/images/products/flavored_makhana.png",
-    imageAlt: "Khirri Roasted Makhana in Peri Peri, Cheese & Pudina flavors",
-  },
-  {
-    id: "product-afghan-anjeer",
-    name: "Afghan Anjeer 250g",
-    tagline: "Sun-dried figs · rich in fiber · naturally sweet",
-    type: "Premium Dry Fruit",
-    badge: "Popular",
-    badgeClass: "brown",
-    image:
-      "/images/products/afghan_anjeer.png",
-    imageAlt: "Khirri Afghan Anjeer premium quality dried figs",
-  },
-  {
-    id: "product-walnut",
-    name: "Premium Walnut 200g",
-    tagline: "Rich in Omega-3 · brain food · wholesome",
-    type: "Dry Fruit",
-    badge: null,
-    badgeClass: null,
-    image:
-      "/images/products/walnut.png",
-    imageAlt: "Khirri Premium Walnuts packed with Omega-3",
-  },
-  {
-    id: "product-mixed-millet",
-    name: "Mixed Millet 400g",
-    tagline: "6 ancient super grains · wholesome · nutritious",
-    type: "Super Grains",
-    badge: "Healthy",
-    badgeClass: "brown",
-    image:
-      "/images/products/mixed_millet.png",
-    imageAlt: "Khirri Mixed Millet — 6 ancient super grains blend",
-  },
-  {
-    id: "product-bulk",
-    name: "Bulk B2B Supply",
-    tagline: "Raw Makhana · 200 kg+ · wholesale pan-India delivery",
-    type: "Custom Qty",
-    badge: "B2B",
-    badgeClass: "dark",
-    image:
-      "/images/makhana_bowl.png",
-    imageAlt: "Bulk makhana wholesale supply from Khirri",
-    featured: true,
-  },
-];
+import type { Product } from "@/lib/types";
 
 export default function Products() {
   const sectionRef = useRef<HTMLElement>(null);
+  const featured = getFeaturedProducts();
+  const bulkB2B = products.find((p) => p.slug === "bulk-supply");
+  const displayProducts = bulkB2B ? [...featured, bulkB2B] : featured;
+
+  const { addItem } = useCart();
+  const [addedItems, setAddedItems] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -89,6 +29,27 @@ export default function Products() {
     el.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  const handleAddToCart = (e: React.MouseEvent, product: Product) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const variant = getDefaultVariant(product);
+    addItem({
+      productSlug: product.slug,
+      variantId: variant.variantId,
+      productName: product.name,
+      weight: variant.weight,
+      price: variant.price,
+      mrp: variant.mrp,
+      image: product.image,
+      packagingType: variant.packagingType,
+    });
+    
+    setAddedItems((prev) => ({ ...prev, [product.slug]: true }));
+    setTimeout(() => {
+      setAddedItems((prev) => ({ ...prev, [product.slug]: false }));
+    }, 1500);
+  };
 
   return (
     <section
@@ -107,64 +68,87 @@ export default function Products() {
             </h2>
             <p className="section-subtitle">
               From premium raw Makhana to roasted snack flavors, dry fruits,
-              and ancient super grains — everything your customers are looking for.
+              and cookies — everything your customers are looking for.
             </p>
           </div>
-          <a href="#contact" className="btn btn-secondary" id="products-view-all-btn">
-            All Variants
+          <Link href="/shop" className="btn btn-secondary" id="products-view-all-btn">
+            View All Products
             <ArrowRight size={16} />
-          </a>
+          </Link>
         </div>
 
         {/* Grid */}
         <ul className={styles.grid} role="list">
-          {products.map((product, i) => (
-            <li
-              key={product.id}
-              id={product.id}
-              className={`reveal reveal-delay-${i + 1} ${styles.card} ${product.featured ? styles.cardFeatured : ""}`}
-            >
-              {/* Image */}
-              <div className={styles.cardImage}>
-                <Image
-                  src={product.image}
-                  alt={product.imageAlt}
-                  fill
-                  className={styles.img}
-                  sizes="(max-width: 768px) 80vw, 25vw"
-                />
-                {product.badge && (
-                  <span
-                    className={`badge ${styles.cardBadge} ${styles[`badge${product.badgeClass}`]}`}
-                  >
-                    {product.badge}
-                  </span>
-                )}
-              </div>
+          {displayProducts.map((product, i) => {
+            const variant = getDefaultVariant(product);
+            const isB2B = product.isB2BOnly;
+            const added = addedItems[product.slug];
 
-              {/* Content */}
-              <div className={styles.cardBody}>
-                <div>
-                  <h3 className={styles.cardName}>{product.name}</h3>
-                  <p className={styles.cardTagline}>{product.tagline}</p>
-                </div>
-                <div className={styles.cardFooter}>
-                  <span className={styles.cardType}>{product.type}</span>
-                  <a
-                    href={`https://wa.me/918949359415?text=Hi%20Khirri%2C%20I%27d%20like%20to%20enquire%20about%20${encodeURIComponent(product.name)}`}
-                    className={`btn btn-primary btn-sm ${styles.enquireBtn}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    id={`${product.id}-enquire-btn`}
-                    aria-label={`Enquire about ${product.name}`}
-                  >
-                    <ShoppingBag size={13} />
-                    {product.featured ? "Get Quote" : "Enquire"}
-                  </a>
-                </div>
-              </div>
-            </li>
-          ))}
+            return (
+              <li
+                key={product.slug}
+                className={`reveal reveal-delay-${(i % 4) + 1} ${styles.card} ${isB2B ? styles.cardFeatured : ""}`}
+              >
+                <Link href={isB2B ? "#contact" : `/product/${product.slug}`} className={styles.cardLink}>
+                  {/* Image */}
+                  <div className={styles.cardImage}>
+                    <Image
+                      src={product.image}
+                      alt={product.imageAlt || product.name}
+                      fill
+                      className={styles.img}
+                      sizes="(max-width: 768px) 80vw, 25vw"
+                      priority={i < 4}
+                    />
+                    {product.badge && (
+                      <span
+                        className={`badge ${styles.cardBadge} ${styles[`badge${product.badgeClass}`]}`}
+                      >
+                        {product.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Content */}
+                  <div className={styles.cardBody}>
+                    <div>
+                      <h3 className={styles.cardName}>{product.name}</h3>
+                      <p className={styles.cardTagline}>{product.tagline}</p>
+                    </div>
+                    
+                    <div className={styles.cardFooter}>
+                      {!isB2B ? (
+                        <>
+                          <div className={styles.pricing}>
+                            <span className={styles.price}>{formatPrice(variant.price)}</span>
+                            {variant.mrp > variant.price && (
+                              <span className={styles.mrp}>{formatPrice(variant.mrp)}</span>
+                            )}
+                          </div>
+                          <button
+                            className={`btn btn-primary btn-sm ${styles.enquireBtn} ${added ? styles.addedBtn : ""}`}
+                            onClick={(e) => handleAddToCart(e, product)}
+                            aria-label={`Add ${product.name} to cart`}
+                          >
+                            <ShoppingBag size={13} />
+                            {added ? "Added ✓" : "Add"}
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          <span className={styles.cardType}>B2B Supply</span>
+                          <span className={`btn btn-primary btn-sm ${styles.enquireBtn}`}>
+                            <Eye size={13} />
+                            Enquire
+                          </span>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

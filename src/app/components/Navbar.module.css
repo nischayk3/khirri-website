@@ -121,6 +121,39 @@
 
 .ctaBtn { display: flex; }
 
+.cartBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  color: var(--brand-brown);
+  transition: background var(--transition-fast);
+}
+
+.cartBtn:hover {
+  background: var(--brand-tan);
+}
+
+.cartBadge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background: var(--brand-orange);
+  color: #fff;
+  font-size: 0.625rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
 /* --- Hamburger --- */
 .hamburger {
   display: none;
@@ -201,4 +234,97 @@
 
 @media (min-width: 901px) {
   .mobileMenu { display: none; }
+}
+
+/* --- Login Button --- */
+.loginBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-brown);
+  border: 1.5px solid var(--brand-tan-dark);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.loginBtn:hover {
+  background: var(--brand-tan);
+  border-color: var(--brand-brown);
+}
+
+/* --- Account Dropdown --- */
+.accountWrap {
+  position: relative;
+}
+
+.accountBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-brown);
+  border: 1.5px solid var(--brand-tan-dark);
+  border-radius: var(--radius-sm);
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+.accountBtn:hover {
+  background: var(--brand-tan);
+  border-color: var(--brand-brown);
+}
+
+.accountPhone {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+  transition: transform 0.2s;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  background: white;
+  border: 1px solid var(--brand-tan-dark);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  min-width: 160px;
+  z-index: 100;
+  overflow: hidden;
+  animation: slideDown 0.15s ease;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  transition: background 0.15s;
+  cursor: pointer;
+  text-decoration: none;
+}
+.dropdownItem:hover {
+  background: var(--brand-tan);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .loginBtn span { display: none; }
+  .accountPhone { display: none; }
 }
