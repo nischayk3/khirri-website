@@ -62,7 +62,7 @@ export default function WhyKhirri() {
             <div className={styles.imageStack}>
               <div className={styles.imageMain}>
                 <Image
-                  src="/images/lotus_pond_harvest.png"
+                  src="/images/bihar-makhana-farming-lotus-pond.webp"
                   alt="Lush green lotus pond — the natural habitat where Makhana grows"
                   fill
                   className={styles.img}
@@ -72,7 +72,7 @@ export default function WhyKhirri() {
               {/* Inset second image */}
               <div className={styles.imageInset}>
                 <Image
-                  src="/images/makhana_bowl.png"
+                  src="/images/premium-phool-makhana-fox-nuts-bowl.webp"
                   alt="Close-up of premium Khirri Phool Makhana fox nuts"
                   fill
                   className={styles.img}

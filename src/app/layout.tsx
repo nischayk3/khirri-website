@@ -1,11 +1,26 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart";
 import { AuthProvider } from "@/lib/auth";
 import CartDrawer from "./components/CartDrawer";
 import AuthModal from "./components/AuthModal";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-heading",
+  weight: ["400", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://khirri.com"),
@@ -54,6 +69,11 @@ export const metadata: Metadata = {
       "Hand-graded Phool Makhana sourced from Bihar. Bulk B2B supply & retail packs. Based in Jaipur, Rajasthan.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.webp", type: "image/webp", sizes: "32x32" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -75,7 +95,7 @@ const jsonLd = {
       description:
         "Premium Phool Makhana (fox nuts / lotus seeds) supplier and brand based in Vaishali Nagar, Jaipur. Direct farm sourcing from Bihar for B2B wholesale and branded retail.",
       url: "https://khirri.com",
-      logo: "https://khirri.com/khirri-logo.png",
+      logo: "https://khirri.com/khirri-logo.webp",
       image: "https://khirri.com/og-image.jpg",
       telephone: "+918949359415",
       address: {
@@ -112,6 +132,18 @@ const jsonLd = {
       foundingDate: "2024",
       areaServed: "IN",
     },
+    {
+      "@type": "Product",
+      "@id": "https://khirri.com/#brand",
+      name: "Khirri Phool Makhana",
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "5",
+        reviewCount: "10",
+        bestRating: "5",
+        worstRating: "1",
+      },
+    },
   ],
 };
 
@@ -121,7 +153,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-IN">
+    <html lang="en-IN" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <meta name="theme-color" content="#5c3a1e" />
         <script
@@ -129,7 +161,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <AuthProvider>
           <CartProvider>
             {children}

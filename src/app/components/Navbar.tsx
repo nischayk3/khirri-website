@@ -69,7 +69,7 @@ export default function Navbar() {
           <Link href="/#home" className={styles.logo} aria-label="Khirri — Home">
             <div className={styles.logoIconWrap} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Image
-                src="/khirri-logo.png"
+                src="/khirri-logo.webp"
                 alt="Khirri Logo"
                 width={42}
                 height={42}

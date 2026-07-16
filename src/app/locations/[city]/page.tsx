@@ -5,6 +5,7 @@ import styles from "./page.module.css";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import WhatsAppFAB from "@/app/components/WhatsAppFAB";
+import { faqSchema } from "@/lib/schema";
 
 const validCities = ["jaipur", "bangalore"];
 
@@ -93,12 +94,18 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
     }
   };
 
+  const faqSchemaData = faqSchema(data.faq);
+
   return (
     <>
       <Navbar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchemaData) }}
       />
       <main className={styles.main}>
         <header className={styles.hero}>

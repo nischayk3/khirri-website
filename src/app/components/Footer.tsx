@@ -1,13 +1,23 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Mail } from "lucide-react";
 import styles from "./Footer.module.css";
+import NewsletterForm from "./NewsletterForm";
 
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Shop", href: "/shop" },
   { label: "Why Khirri", href: "/#why-khirri" },
-  { label: "About", href: "/#about" },
+  { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/#contact" },
+];
+
+const b2bLinks = [
+  { label: "Bulk Supply Jaipur", href: "/bulk-makhana-supplier-jaipur" },
+  { label: "Wholesale Bangalore", href: "/wholesale-makhana-bangalore" },
+  { label: "Makhana Cookies Bulk", href: "/makhana-cookies-wholesale" },
+  { label: "Makhana Price Jaipur", href: "/jaipur-makhana-price-guide" },
+  { label: "Request Sample", href: "/sample-request" },
 ];
 
 // Inline SVGs for social platforms not in lucide-react v1
@@ -65,7 +75,7 @@ export default function Footer() {
             <div className={styles.logoWrap}>
               <div className={styles.logoIconWrap} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Image
-                  src="/khirri-logo.png"
+                  src="/khirri-logo.webp"
                   alt="Khirri Logo"
                   width={42}
                   height={42}
@@ -116,6 +126,20 @@ export default function Footer() {
             </ul>
           </nav>
 
+          {/* B2B Links */}
+          <nav className={styles.nav} aria-label="B2B links">
+            <p className={styles.navTitle}>B2B / Wholesale</p>
+            <ul role="list">
+              {b2bLinks.map((link) => (
+                <li key={link.label}>
+                  <Link href={link.href} className={styles.navLink}>
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           {/* Contact snapshot */}
           <div className={styles.contactSnap}>
             <p className={styles.navTitle}>Contact</p>
@@ -145,6 +169,15 @@ export default function Footer() {
             >
               WhatsApp Us
             </a>
+          </div>
+
+          {/* Newsletter */}
+          <div className={styles.newsletter}>
+            <p className={styles.navTitle}>Stay Updated</p>
+            <p className={styles.newsletterDesc}>
+              Get makhana insights, recipes, and wholesale offers delivered to your inbox.
+            </p>
+            <NewsletterForm />
           </div>
         </div>
 

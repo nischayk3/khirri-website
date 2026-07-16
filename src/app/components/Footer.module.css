@@ -7,7 +7,7 @@
 
 .top {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1.2fr 1.2fr;
   gap: var(--space-12);
   padding-bottom: var(--space-12);
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -81,6 +81,69 @@
   color: #fff;
 }
 
+/* Newsletter */
+.newsletter { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.newsletterDesc {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+  margin-bottom: var(--space-2);
+}
+
+.newsletterForm {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+}
+
+.newsletterInput {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  font-size: 0.875rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color var(--transition-fast);
+  min-width: 0;
+}
+
+.newsletterInput::placeholder {
+  color: rgba(255,255,255,0.3);
+}
+
+.newsletterInput:focus {
+  border-color: var(--brand-orange);
+}
+
+.newsletterBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--brand-orange);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+  white-space: nowrap;
+}
+
+.newsletterBtn:hover {
+  background: var(--brand-orange-hover);
+}
+
+.newsletterSuccess {
+  font-size: 0.85rem;
+  color: #4ade80;
+}
+
 /* Nav */
 .nav ul { margin-top: var(--space-5); display: flex; flex-direction: column; gap: var(--space-3); }
 
@@ -146,7 +209,7 @@ a.contactItem:hover { color: #fff; }
 .legalLink:hover { color: rgba(255,255,255,0.8); }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
   .top { grid-template-columns: 1fr 1fr; }
   .brand { grid-column: 1 / -1; }
 }

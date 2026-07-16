@@ -204,8 +204,273 @@ At **Khirri**, we are incredibly proud of our roots. We source our Phool Makhana
 Want to experience the best makhana in the world? [View our product range](#products) or [WhatsApp us for bulk inquiries](https://wa.me/918949359415).
 `,
   },
-];
+  // ===== NEW SEO ARTICLES (July 2026) =====
+  {
+    slug: "makhana-wholesale-price-bangalore-2026",
+    title: "Makhana Wholesale Price in Bangalore 2026 — Complete B2B Buyer's Guide",
+    category: "B2B Insights",
+    date: "July 15, 2026",
+    readTime: "5 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Current wholesale makhana prices in Bangalore for July 2026. Compare suta grades, understand pricing factors, and find the best bulk supplier.",
+    content: `
+If you're a business buyer in Bangalore looking for bulk makhana (fox nuts), understanding the wholesale pricing landscape is critical to your margins.
 
+## Current Makhana Wholesale Price in Bangalore (July 2026)
+
+| Grade | Size | Wholesale Price (per kg) |
+|-------|------|------------------------|
+| 4/4+ Suta (Commercial) | 12-14mm | ₹900–₹1,000/kg |
+| 5+ Suta (Premium) | 15-19mm | ₹1,100–₹1,300/kg |
+| 6+ Suta (Jumbo Export) | 19mm+ | ₹1,400–₹1,600/kg |
+
+## How to Get the Best Wholesale Price in Bangalore
+
+The most effective way to reduce your per-kg cost is to eliminate middlemen. Khirri sources directly from Bihar farmers and ships from our Jaipur hub to Bangalore. This direct chain saves you 20-30% compared to local distributors.
+
+### Order in Bulk
+- 8kg (1 sack): Base wholesale price
+- 50kg+: 8% discount
+- 100kg+: 12% discount
+
+## Why Bangalore Businesses Choose Khirri
+
+From quick-commerce dark stores to health food brands, businesses across Karnataka trust Khirri for consistent quality, reliable supply, FSSAI certification, and pan-India logistics.
+
+---
+
+**Ready to source premium makhana for your Bangalore business?** [WhatsApp us](https://wa.me/918949359415) for today's live pricing.
+    `,
+  },
+  {
+    slug: "makhana-cookies-vs-regular-cookies-business",
+    title: "Makhana Cookies vs Regular Cookies — Why Smart Businesses Are Making the Switch",
+    category: "Product Insights",
+    date: "July 14, 2026",
+    readTime: "4 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Discover why cafes, retailers, and corporate gifting buyers are switching from refined flour cookies to makhana-based cookies.",
+    content: `
+The Indian cookie market is undergoing a massive shift. Leading this change are **makhana cookies** — baked snacks made with 60% Phool Makhana flour.
+
+## The Business Case for Stocking Makhana Cookies
+
+### 1. Higher Margin Potential
+Makhana cookies command a premium price point. Health-conscious consumers are willing to pay more for better ingredients.
+
+### 2. Growing Market Demand
+The Indian healthy snacks market is growing at 17-18% annually. Makhana-based products are at the forefront of this trend.
+
+### 3. Differentiation
+Whether you're a café or a retailer, makhana cookies offer something competitors don't have.
+
+## Where to Buy Makhana Cookies Wholesale
+
+**Khirri** manufactures premium makhana cookies in Jaipur. Bulk supply at wholesale rates, private label options, and pan-India delivery.
+
+---
+
+[Order wholesale on WhatsApp](https://wa.me/918949359415) or visit [khirri.com/makhana-cookies-wholesale](https://khirri.com/makhana-cookies-wholesale).
+    `,
+  },
+  {
+    slug: "corporate-gifting-makhana-guide",
+    title: "Corporate Gifting with Makhana: The Ultimate Guide for 2026",
+    category: "B2B Insights",
+    date: "July 13, 2026",
+    readTime: "5 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Discover why makhana-based gift boxes are becoming the preferred choice for Diwali, New Year, and client appreciation.",
+    content: `
+Corporate gifting in India is evolving rapidly. The old standbys of sweet boxes are giving way to healthier options. Enter **makhana gift boxes**.
+
+## Why Makhana is the Perfect Corporate Gift
+
+- **Universal appeal** — Gluten-free, vegan-friendly, naturally healthy
+- **Premium perception** — Attractive packaging, superfood halo
+- **Health-conscious branding** — Shows you care about wellbeing
+
+## Best Makhana Products for Corporate Gifting
+
+**Option 1: Makhana Hamper** — Premium raw makhana + cookies + anjeer in custom box
+**Option 2: Cookies Gift Box** — 3-5 jars in premium packaging
+**Option 3: Custom Branded Box** — Full custom packaging, MOQ 25 units
+
+## Why Choose Khirri?
+
+Custom packaging with your branding, flexible order sizes (25-1,000+ units), pan-India delivery, FSSAI certified.
+
+---
+
+[Enquire about corporate gifting on WhatsApp](https://wa.me/918949359415)
+    `,
+  },
+
+  // ===== JAIPUR-SPECIFIC SEO ARTICLES =====
+  {
+    slug: "best-dry-fruits-shop-vaishali-nagar-jaipur",
+    title: "Best Dry Fruits Shop in Vaishali Nagar, Jaipur — Your Local Guide (2026)",
+    category: "Local Guide",
+    date: "July 16, 2026",
+    readTime: "4 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Looking for the best dry fruits shop in Vaishali Nagar, Jaipur? Visit Khirri for premium makhana, dry fruits, and healthy snacks. Fresh stock, competitive prices, and pan-India delivery.",
+    content: `
+Vaishali Nagar is one of Jaipur's most vibrant neighborhoods, and finding quality dry fruits and healthy snacks locally shouldn't be a challenge. At **Khirri**, we've made it our mission to be the go-to destination for premium makhana, dry fruits, and superfoods in Vaishali Nagar.
+
+## Why Khirri is Vaishali Nagar's Preferred Dry Fruits Shop
+
+### 1. Premium Quality, Every Time
+We source our products directly from origin — makhana from Bihar farms, anjeer from Afghanistan, walnuts from Kashmir. Every batch is quality-checked before it reaches our shelves.
+
+### 2. Transparent Pricing
+No hidden markups. Our prices are clearly displayed in-store and online. We believe in fair pricing for quality products.
+
+### 3. Wide Product Range
+From raw Phool Makhana (suta-graded) to makhana cookies, Afghan anjeer, premium walnuts, mixed millets, and more — we stock everything a health-conscious buyer needs.
+
+### 4. B2B & Retail, Both Welcome
+Whether you're a walk-in customer buying 250g of makhana or a business ordering 50kg bulk supply, you get the same quality and service.
+
+## Visit Our Vaishali Nagar Store
+
+**Address**: AA-7, Nursery Cir, Acharya Vinoba Bhave Nagar, B Block, Vaishali Nagar, Jaipur 302021
+
+**Hours**: Mon-Sun, 10:00 AM – 10:00 PM
+
+**Phone**: +91 89493 59415
+
+[Get Directions on Google Maps](https://maps.app.goo.gl/gwn3rdAANC1TmXVS6)
+    `,
+  },
+  {
+    slug: "makhana-wholesale-jaipur-namkeen-shop",
+    title: "Makhana Wholesale Supply for Namkeen Shops in Jaipur — Complete Guide",
+    category: "B2B Insights",
+    date: "July 15, 2026",
+    readTime: "5 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Jaipur namkeen shop owners: Boost your snack sales with premium makhana. Learn how Khirri's bulk makhana supply can increase your margins and attract health-conscious customers.",
+    content: `
+If you run a namkeen or dry fruit shop in Jaipur, adding makhana to your product line is one of the smartest moves you can make in 2026. Here's why, and how Khirri makes it easy.
+
+## Why Makhana is a Must-Stock for Jaipur Namkeen Shops
+
+### Growing Demand
+The Indian makhana market is growing at 10.57% CAGR. Jaipur's health-conscious consumers are actively seeking healthier snack alternatives, and makhana fits perfectly.
+
+### Higher Margins
+With wholesale prices starting at ₹900/kg and retail prices at ₹300-₹500 for 250g packs, makhana offers better margins than traditional namkeen items.
+
+### Shelf-Stable
+Makhana has a 6-9 month shelf life when stored properly. No special refrigeration needed.
+
+## How Khirri Supports Jaipur Namkeen Shops
+
+### Bulk Supply
+We deliver 8kg, 10kg, 25kg+ sacks directly to your shop in Jaipur. No minimum order hassles.
+
+### Grade Options
+Choose from 4 Suta (commercial grade for flavored makhana), 5+ Suta (premium for retail packs), or 6+ Suta (jumbo for premium positioning).
+
+### Consistent Quality
+Every batch is hand-graded and lab-tested. You get the same quality with every order.
+
+## Success Story
+One of our Jaipur namkeen shop partners saw a 30% increase in snack sales after adding Khirri makhana to their product range.
+
+---
+
+**Ready to stock Khirri makhana?** [WhatsApp us](https://wa.me/918949359415) for bulk pricing and delivery in Jaipur.
+    `,
+  },
+  {
+    slug: "makhana-cookies-jaipur-cafes",
+    title: "Makhana Cookies for Cafes in Jaipur — A Healthy Addition to Your Menu",
+    category: "Product Insights",
+    date: "July 14, 2026",
+    readTime: "4 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Jaipur cafes: Add Khirri's makhana cookies to your menu. Gluten-free, baked not fried, and made with 60% makhana flour. Wholesale supply available for cafes across Jaipur.",
+    content: `
+Jaipur's cafe culture is booming, and health-conscious customers are looking for guilt-free indulgence options. **Khirri Makhana Cookies** are the perfect addition to your cafe menu.
+
+## Why Makhana Cookies Work for Cafes
+
+### A Unique Selling Point
+Stand out from other Jaipur cafes by offering a cookie made with 60% makhana flour. It's a conversation starter and a Instagram-worthy menu item.
+
+### Dietary-Friendly
+Gluten-free, high protein (12g per 100g), and baked (not fried). Appeals to modern dietary preferences without compromising on taste.
+
+### Pairs Perfectly with Chai & Coffee
+Makhana cookies have a subtle, nutty flavor that complements both traditional masala chai and specialty coffee.
+
+## Wholesale Supply for Jaipur Cafes
+
+Khirri offers special wholesale pricing for cafes and bakeries in Jaipur:
+- 250g jars: ₹300/unit (12+ units)
+- 500g jars: ₹500/unit (12+ units)
+- Custom branding available for orders of 50+ units
+- Free delivery within Jaipur
+
+---
+
+**Want to stock makhana cookies in your Jaipur cafe?** [Order on WhatsApp](https://wa.me/918949359415)
+    `,
+  },
+  {
+    slug: "dry-fruits-wholesale-jaipur-business-guide",
+    title: "Dry Fruits Wholesale in Jaipur — How to Start a Dry Fruit Business in Rajasthan",
+    category: "B2B Insights",
+    date: "July 13, 2026",
+    readTime: "6 min read",
+    author: "Khirri Trading Co.",
+    excerpt: "Starting a dry fruit business in Jaipur? Learn about wholesale suppliers, pricing, product selection, and how Khirri can help you source premium dry fruits and makhana at competitive rates.",
+    content: `
+Jaipur is a thriving hub for dry fruit trading in Rajasthan. If you're looking to start or expand a dry fruit business, here's everything you need to know about wholesale sourcing in Jaipur.
+
+## The Jaipur Dry Fruit Market
+
+Jaipur's strategic location and strong trading networks make it an ideal base for dry fruit businesses. The city has access to:
+- Direct供应链 from producing regions (Bihar for makhana, Kashmir for walnuts, Afghanistan for anjeer)
+- Strong logistics connectivity to Delhi, Mumbai, and other major markets
+- Growing local demand from health-conscious consumers
+
+## Best-Selling Products in Jaipur
+
+Based on our sales data, these products have the highest demand in Jaipur:
+
+### 1. Raw Phool Makhana
+The #1 superfood in demand. Available in suta grades from 4 to 6+. Wholesale price: ₹900-₹1,400/kg.
+
+### 2. Afghan Anjeer (Dried Figs)
+Premium sun-dried figs. Wholesale price: ₹325-₹650 for 250-500g packs.
+
+### 3. Premium Walnuts (Akhrot)
+Rich in Omega-3. Wholesale price: ₹450-₹900 for 250-500g packs.
+
+### 4. Mixed Millet
+6 ancient grains blend. Wholesale price: ₹325-₹650 for 250-500g packs.
+
+### 5. Makhana Cookies
+The newest addition. Wholesale price: ₹300-₹500 per jar.
+
+## How to Source Wholesale in Jaipur
+
+**Khirri** offers complete wholesale solutions for dry fruit businesses in Jaipur:
+- Single-source supply for multiple products
+- Transparent pricing with GST invoice
+- Flexible MOQ (start small, scale up)
+- Quality guarantee on every batch
+- Free delivery within Jaipur for orders above ₹2,499
+
+---
+
+**Ready to start or scale your dry fruit business in Jaipur?** [Contact Khirri on WhatsApp](https://wa.me/918949359415) for wholesale pricing.
+    `,
+  },
+];
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);
 }

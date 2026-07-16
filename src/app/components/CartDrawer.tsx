@@ -279,6 +279,23 @@ export default function CartDrawer() {
               >
                 Continue Shopping
               </button>
+
+              {/* Payment Methods */}
+              <div className={styles.paymentMethods}>
+                <span className={styles.paymentLabel}>Pay with</span>
+                <div className={styles.paymentIcons}>
+                  <span title="UPI">UPI</span>
+                  <span title="Credit/Debit Card">Card</span>
+                  <span title="Net Banking">NetBank</span>
+                  <span title="Cash on Delivery">COD</span>
+                </div>
+              </div>
+
+              {/* Available Coupons */}
+              <div className={styles.couponHint}>
+                <Tag size={12} />
+                <span>Coupons: KHIRRI10, HEALTHY50, MAKHANA20</span>
+              </div>
             </div>
           </>
         )}

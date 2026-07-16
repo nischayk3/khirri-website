@@ -18,11 +18,11 @@ export async function GET() {
 
 ## Products
 Khirri supplies premium GI-tagged Bihar makhana in the following formats:
-- Raw Phool Makhana (200g, 500g, 1kg retail packs)
-- Roasted Flavored Makhana (Peri Peri, Cheese, Pudina)
-- Premium Dry Fruits (Afghan Anjeer, Walnut)
-- Mixed Millet Snacks
-- B2B Bulk Supply (Wholesale sacks direct to businesses)
+- Raw Phool Makhana (250g, 500g, 1kg retail packs) — suta-graded (4, 5+, 6+)
+- Makhana Cookies (250g, 500g, 1kg jars) — made with 60% makhana flour, baked
+- Premium Dry Fruits: Afghan Anjeer (dried figs), Premium Walnuts
+- Mixed Millet — 6 ancient super grains blend
+- B2B Bulk Supply — wholesale sacks (8kg, 10kg) direct to businesses pan-India
 
 ## Official Documentation & Guides
 Below are our official resources regarding the health benefits of makhana and how to build a makhana business:

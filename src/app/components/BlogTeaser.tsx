@@ -1,38 +1,25 @@
-import { ArrowRight, BookOpen, TrendingUp, Leaf } from "lucide-react";
+import { ArrowRight, BookOpen, TrendingUp, Leaf, DollarSign, Gift } from "lucide-react";
+import { blogPosts } from "@/lib/blog";
+import type { BlogPost } from "@/lib/blog";
 import styles from "./BlogTeaser.module.css";
 
-const articles = [
-  {
-    id: "blog-makhana-benefits",
-    icon: Leaf,
-    category: "Health & Nutrition",
-    title: "10 Proven Health Benefits of Eating Makhana Every Day",
-    excerpt:
-      "From managing blood sugar to boosting heart health — discover why nutritionists across India are calling Phool Makhana the ultimate superfood.",
-    readTime: "5 min read",
-    slug: "health-benefits-of-makhana",
-  },
-  {
-    id: "blog-makhana-business",
-    icon: TrendingUp,
-    category: "B2B Insights",
-    title: "How to Start a Makhana Snack Business in India (2025 Guide)",
-    excerpt:
-      "Everything you need to know about sourcing, packaging, regulations, and selling branded Makhana products — including finding the right wholesale supplier.",
-    readTime: "8 min read",
-    slug: "how-to-start-makhana-business",
-  },
-  {
-    id: "blog-bihar-makhana",
-    icon: BookOpen,
-    category: "Our Story",
-    title: "Why Bihar Produces the World's Best Makhana",
-    excerpt:
-      "The climate, the lotus ponds, and the generations-old harvesting tradition that make Bihar Makhana unlike anything else in the world.",
-    readTime: "6 min read",
-    slug: "why-bihar-produces-best-makhana",
-  },
-];
+const categoryIcons: Record<string, React.ElementType> = {
+  "Health & Nutrition": Leaf,
+  "B2B Insights": TrendingUp,
+  "Our Story": BookOpen,
+  "Product Insights": DollarSign,
+};
+
+// Show latest 3 articles from the blog
+const articles = blogPosts.slice(-3).reverse().map((post: BlogPost) => ({
+  id: `blog-${post.slug}`,
+  icon: categoryIcons[post.category] || BookOpen,
+  category: post.category,
+  title: post.title,
+  excerpt: post.excerpt,
+  readTime: post.readTime,
+  slug: post.slug,
+}));
 
 export default function BlogTeaser() {
   return (

@@ -16,11 +16,11 @@ export const products: Product[] = [
     description:
       "Unlike other brands that mix all sizes together, Khirri brings you transparent 'Suta' grading. We hand-pick and grade our raw Phool Makhana into specific sizes (4, 5, and 6+ Suta) so you know exactly what you are paying for. Sourced directly from Bihar's Mithila region, our makhana is lab-tested, rich in protein, and naturally gluten-free.",
     category: "makhana",
-    image: "/images/products/khirri_makhana_original.jpg",
+    image: "/images/products/raw-phool-makhana-premium-khirri.webp",
     imageAlt: "Khirri Raw Phool Makhana 250g premium branded pouch",
     gallery: [
-      "/images/products/khirri_makhana_original.jpg",
-      "/images/makhana_bowl.png",
+      "/images/products/raw-phool-makhana-premium-khirri.webp",
+      "/images/premium-phool-makhana-fox-nuts-bowl.webp",
     ],
     badge: "Best Seller",
     badgeClass: "orange",
@@ -165,10 +165,10 @@ export const products: Product[] = [
     description:
       "India's healthiest cookie — made with 60% Makhana flour. Baked, not fried. Rich in protein, gluten-free, and free from artificial preservatives. The perfect guilt-free snack for tea-time, kids' lunchboxes, or anytime you need a wholesome crunch.",
     category: "cookies",
-    image: "/images/products/makhana_cookies_jar.png",
+    image: "/images/products/makhana-cookies-60percent-makhana-flour.webp",
     imageAlt: "Khirri Makhana Cookies jar — made with 60% Makhana, gluten-free",
     gallery: [
-      "/images/products/makhana_cookies_jar.png",
+      "/images/products/makhana-cookies-60percent-makhana-flour.webp",
     ],
     badge: "New",
     badgeClass: "orange",
@@ -230,10 +230,10 @@ export const products: Product[] = [
     description:
       "Premium sun-dried figs imported from Afghanistan. Naturally sweet with a soft, chewy texture, packed with dietary fiber, potassium, and antioxidants. Perfect as a healthy dessert substitute, in smoothies, or as a standalone snack.",
     category: "dry-fruits",
-    image: "/images/products/anjeer_pouch.png",
+    image: "/images/products/afghan-anjeer-sun-dried-figs-premium.webp",
     imageAlt: "Khirri Afghan Anjeer — premium quality sun-dried figs 250g",
     gallery: [
-      "/images/products/anjeer_pouch.png",
+      "/images/products/afghan-anjeer-sun-dried-figs-premium.webp",
     ],
     badge: "Popular",
     badgeClass: "brown",
@@ -294,10 +294,10 @@ export const products: Product[] = [
     description:
       "Premium quality walnuts, carefully selected for size and freshness. A powerhouse of Omega-3 fatty acids, antioxidants, and essential minerals. Ideal for boosting brain health, heart health, and overall wellness.",
     category: "dry-fruits",
-    image: "/images/products/walnut_pouch.png",
+    image: "/images/products/premium-walnuts-omega3-brain-health.webp",
     imageAlt: "Khirri Premium Walnuts 200g — rich in Omega-3",
     gallery: [
-      "/images/products/walnut_pouch.png",
+      "/images/products/premium-walnuts-omega3-brain-health.webp",
     ],
     metaDescription:
       "Buy premium walnuts online. Rich in Omega-3, perfect brain food. 200g pack from Khirri.",
@@ -356,10 +356,10 @@ export const products: Product[] = [
     description:
       "A carefully curated blend of 6 ancient super grains — Ragi, Jowar, Bajra, Foxtail Millet, Kodo Millet, and Little Millet. Rich in fiber, iron, and essential minerals. Perfect for making healthy rotis, porridge, or adding to your daily diet.",
     category: "super-grains",
-    image: "/images/products/millet_pouch.png",
+    image: "/images/products/mixed-millet-6-grains-blend-khirri.webp",
     imageAlt: "Khirri Mixed Millet 400g — 6 ancient super grains blend",
     gallery: [
-      "/images/products/millet_pouch.png",
+      "/images/products/mixed-millet-6-grains-blend-khirri.webp",
     ],
     badge: "Healthy",
     badgeClass: "green",
@@ -422,7 +422,7 @@ export const products: Product[] = [
     description:
       "Wholesale raw Makhana supply for businesses across India. Graded carefully into 4, 5, and 6+ Suta sizes. Direct farm sourcing means unbeatable bulk prices with consistent quality. Ideal for retail repackaging, processing, or commercial kitchens.",
     category: "bulk",
-    image: "/images/products/makhana_sack.png",
+    image: "/images/products/bulk-makhana-wholesale-supply-khirri.webp",
     imageAlt: "Bulk makhana wholesale supply from Khirri",
     badge: "B2B",
     badgeClass: "dark",

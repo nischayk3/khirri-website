@@ -104,7 +104,7 @@ export default function Hero() {
         <div className={`reveal reveal-delay-2 ${styles.imageWrapper}`}>
           <div className={styles.imageFrame}>
             <Image
-              src="/images/makhana_bowl.png"
+              src="/images/premium-phool-makhana-fox-nuts-bowl.webp"
               alt="Premium raw Phool Makhana fox nuts displayed beautifully"
               width={600}
               height={500}

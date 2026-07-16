@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { products, getProductBySlug } from "@/lib/products";
+import { products, getProductBySlug, getDefaultVariant } from "@/lib/products";
+import { productSchema, breadcrumbSchema } from "@/lib/schema";
 import ProductDetail from "./ProductDetail";
 
 interface PageProps {
@@ -37,5 +38,29 @@ export default async function ProductPage({ params }: PageProps) {
   const product = getProductBySlug(slug);
   if (!product || product.isB2BOnly) notFound();
 
-  return <ProductDetail product={product} />;
+  const defaultVariant = getDefaultVariant(product);
+
+  const schemas = [
+    breadcrumbSchema([
+      { name: "Home", url: "/" },
+      { name: "Shop", url: "/shop" },
+      { name: product.name, url: `/product/${product.slug}` },
+    ]),
+    productSchema(product, defaultVariant),
+  ];
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": schemas,
+          }),
+        }}
+      />
+      <ProductDetail product={product} />
+    </>
+  );
 }

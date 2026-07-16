@@ -48,7 +48,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
       name: "Khirri Trading Company",
       logo: {
         "@type": "ImageObject",
-        url: "https://khirri.com/khirri-logo.png",
+        url: "https://khirri.com/khirri-logo.webp",
       },
     },
     datePublished: new Date(post.date).toISOString(),
