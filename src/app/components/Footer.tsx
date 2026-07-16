@@ -18,6 +18,9 @@ const b2bLinks = [
   { label: "Makhana Cookies Bulk", href: "/makhana-cookies-wholesale" },
   { label: "Makhana Price Jaipur", href: "/jaipur-makhana-price-guide" },
   { label: "Request Sample", href: "/sample-request" },
+  { label: "Private Label", href: "/private-label-makhana" },
+  { label: "Size Guide", href: "/makhana-size-guide" },
+  { label: "Makhana Export", href: "/makhana-export-supplier" },
 ];
 
 // Inline SVGs for social platforms not in lucide-react v1
