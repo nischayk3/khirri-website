@@ -37,14 +37,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
   const articleJsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `https://khirri.com/blog/${post.slug}#article`,
     headline: post.title,
     description: post.excerpt,
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: post.author,
+      memberOf: { "@type": "Organization", "@id": "https://khirri.com/#org" },
     },
     publisher: {
       "@type": "Organization",
+      "@id": "https://khirri.com/#org",
       name: "Khirri Trading Company",
       logo: {
         "@type": "ImageObject",

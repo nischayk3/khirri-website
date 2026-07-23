@@ -470,6 +470,608 @@ The newest addition. Wholesale price: ₹300-₹500 per jar.
 **Ready to start or scale your dry fruit business in Jaipur?** [Contact Khirri on WhatsApp](https://wa.me/918949359415) for wholesale pricing.
     `,
   },
+  // ===== NEW SEO BLOG POSTS (July 23, 2026) =====
+  {
+    slug: "easy-makhana-recipes-snacks-desserts",
+    title: "5 Easy Makhana Recipes — From Savory Snacks to Sweet Kheer",
+    category: "Recipes",
+    date: "July 23, 2026",
+    readTime: "6 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Discover 5 delicious and healthy makhana recipes including classic ghee roast, masala makhana, makhana kheer, jaggery makhana, and makhana chivda. Easy to make at home!",
+    content: `
+Makhana (fox nuts) is one of the most versatile ingredients in Indian cuisine. From savory snacks to creamy desserts, these puffed lotus seeds can transform into virtually any dish. Here are 5 easy makhana recipes you can make at home using Khirri's premium raw Phool Makhana.
+
+## 1. Classic Ghee Roasted Makhana
+
+The simplest and most popular way to enjoy makhana.
+
+**Ingredients:**
+- 2 cups Khirri Phool Makhana
+- 1 tbsp ghee (clarified butter)
+- ½ tsp black salt
+- ¼ tsp black pepper powder
+
+**Method:**
+1. Heat ghee in a heavy-bottomed pan on low flame
+2. Add makhana and roast, stirring continuously for 5-7 minutes until crispy
+3. Sprinkle black salt and pepper powder
+4. Toss well and let it cool — store in an airtight container
+
+This is the perfect tea-time snack and makes for a great healthy alternative to fried snacks.
+
+## 2. Spicy Masala Makhana
+
+For those who love bold, tangy flavors.
+
+**Ingredients:**
+- 2 cups Khirri Phool Makhana
+- 1 tbsp olive oil or ghee
+- ½ tsp turmeric powder
+- ½ tsp red chili powder
+- ¼ tsp chaat masala
+- ¼ tsp amchur (dry mango powder)
+- Salt to taste
+
+**Method:**
+1. Dry roast makhana on low flame for 3-4 minutes, set aside
+2. Heat oil in the same pan, add all spice powders and mix
+3. Add roasted makhana and toss well until evenly coated
+4. Cool completely before storing
+
+Pro tip: Add a squeeze of fresh lemon juice just before serving for extra zing!
+
+## 3. Creamy Makhana Kheer
+
+A rich, traditional Indian dessert made with makhana instead of rice.
+
+**Ingredients:**
+- 1 cup Khirri Phool Makhana
+- 1 litre full-fat milk
+- ½ cup sugar (adjust to taste)
+- ¼ tsp cardamom powder
+- 2 tbsp chopped nuts (almonds, pistachios)
+- 1 tbsp raisins
+- 1 tsp ghee
+
+**Method:**
+1. Heat ghee in a pan, lightly roast makhana until crispy, then crush coarsely
+2. Bring milk to a boil in a heavy-bottomed pan
+3. Add crushed makhana and simmer on low flame for 20 minutes, stirring occasionally
+4. Add sugar, cardamom powder, and nuts
+5. Cook for another 5-7 minutes until kheer thickens
+6. Serve warm or chilled, garnished with slivered almonds
+
+## 4. Sweet Jaggery Makhana
+
+A healthy sweet treat that satisfies sugar cravings naturally.
+
+**Ingredients:**
+- 2 cups Khirri Phool Makhana
+- ½ cup jaggery powder (gur)
+- ½ tsp cardamom powder
+- 1 tsp ghee
+- 1 tbsp water
+
+**Method:**
+1. Dry roast makhana on low flame until crisp, set aside
+2. In the same pan, melt jaggery with water on low heat until it begins to bubble
+3. Add cardamom powder and ghee, mix well
+4. Add roasted makhana and toss until fully coated
+5. Spread on a greased plate to cool — it will harden like a praline
+
+## 5. Makhana Chivda (Namkeen Mix)
+
+A healthy twist on the classic Maharashtra-style snack mix.
+
+**Ingredients:**
+- 2 cups Khirri Phool Makhana
+- ½ cup roasted peanuts
+- ¼ cup curry leaves
+- 2 dried red chilies
+- ½ tsp mustard seeds
+- ¼ tsp asafoetida (hing)
+- ½ tsp turmeric powder
+- 1 tbsp oil
+- Salt to taste
+
+**Method:**
+1. Dry roast makhana until crispy, set aside
+2. Heat oil, add mustard seeds and let them splutter
+3. Add curry leaves, dried red chilies, and asafoetida
+4. Add turmeric and peanuts, sauté for 1 minute
+5. Add roasted makhana and salt, toss well
+6. Cool completely — stays fresh for 2 weeks in an airtight jar
+
+---
+
+**Ready to try these recipes?** Use Khirri's premium raw Phool Makhana for the best results. [Shop now](https://khirri.com/shop) or [order bulk on WhatsApp](https://wa.me/918949359415).
+    `,
+  },
+  {
+    slug: "makhana-vs-popcorn-which-healthier-snack",
+    title: "Makhana vs Popcorn: Which is the Healthier Snack? (Nutritionist Review)",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "We compare makhana vs popcorn across calories, protein, fiber, fat, and glycemic impact. Find out why nutritionists are choosing makhana as the ultimate healthy snack.",
+    content: `
+Popcorn has long been the go-to snack for health-conscious movie watchers. But in recent years, makhana (fox nuts) has emerged as a strong competitor. In this detailed comparison, we pit **makhana vs popcorn** across every nutritional metric.
+
+## Nutritional Comparison: Makhana vs Popcorn (Per 100g)
+
+| Nutrient | Makhana (Roasted) | Popcorn (Air-Popped) |
+|----------|------------------|---------------------|
+| Calories | 347 kcal | 387 kcal |
+| Protein | 9.7g | 12.9g |
+| Carbohydrates | 76g | 77.7g |
+| Fiber | 14.5g | 14.5g |
+| Fat | 0.1g | 4.3g |
+| Sodium | 2mg | 8mg |
+| Calcium | 60mg | 7mg |
+| Magnesium | 160mg | 126mg |
+| Potassium | 350mg | 301mg |
+
+## Which One Wins? Category by Category
+
+### Calories: **Makhana wins** 🏆
+Makhana has fewer calories per 100g (347 vs 387), making it the better choice for weight management.
+
+### Protein: **Popcorn wins** (slightly)
+Popcorn has slightly more protein per 100g. However, makhana's protein is more bioavailable and easier to digest.
+
+### Fat: **Makhana wins** 🏆
+With less than 1g of fat per 100g, makhana is virtually fat-free. Popcorn has 4g+ of fat per 100g even without added butter.
+
+### Fiber: **Tie**
+Both are excellent sources of dietary fiber at ~14.5g per 100g.
+
+### Minerals: **Makhana wins** 🏆
+Makhana has significantly more calcium (60mg vs 7mg), magnesium (160mg vs 126mg), and potassium (350mg vs 301mg).
+
+### Glycemic Index: **Makhana wins** 🏆
+Makhana has a low glycemic index (GI under 50) while popcorn has a medium GI (55-65). This makes makhana better for diabetics and blood sugar management.
+
+## The Verdict
+
+**Makhana is the healthier snack overall.** While popcorn isn't bad, makhana wins in calories, fat content, mineral density, and glycemic impact. Plus, makhana is naturally gluten-free and often roasted without oil.
+
+### When to Choose Popcorn
+If you need more volume for fewer calories (popcorn is fluffier), or you prefer the taste, popcorn is still a solid choice — just skip the butter.
+
+### When to Choose Makhana
+If you're watching your weight, managing diabetes, need more calcium/magnesium in your diet, or want a snack that's virtually fat-free, makhana is the clear winner.
+
+---
+
+**Try the winner yourself.** [Shop Khirri premium Phool Makhana](https://khirri.com/shop) — hand-graded, FSSAI certified, and sourced directly from Bihar farms.
+    `,
+  },
+  {
+    slug: "makhana-for-diabetes-benefits-low-glycemic-snack",
+    title: "Makhana for Diabetes: Can Diabetics Eat Makhana? A Complete Guide",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Can diabetics eat makhana? Learn about makhana's low glycemic index, its role in blood sugar management, and how to include it in a diabetic-friendly diet.",
+    content: `
+With over 100 million diabetics in India, finding healthy, blood sugar-friendly snacks is a daily challenge for millions. Makhana (fox nuts) has emerged as one of the most recommended snacks for diabetics. But what does the science say?
+
+## Is Makhana Good for Diabetes?
+
+**Yes, makhana is excellent for diabetics.** Here's why:
+
+### Low Glycemic Index
+Makhana has a glycemic index (GI) of approximately **45-50**, which is considered low. Foods with low GI release glucose slowly into the bloodstream, preventing sudden spikes in blood sugar levels.
+
+### High Fiber Content
+The high dietary fiber content (14.5g per 100g) slows down carbohydrate absorption, further stabilizing blood sugar levels after meals.
+
+### Rich in Magnesium
+Magnesium plays a crucial role in insulin sensitivity. Makhana is rich in magnesium (160mg per 100g), which helps improve the body's response to insulin.
+
+### Low Fat, Low Calories
+With less than 1g of fat and only 347 calories per 100g, makhana supports weight management — a key factor in controlling type 2 diabetes.
+
+## How Diabetics Should Eat Makhana
+
+### ✅ Best Ways
+- **Plain ghee-roasted makhana** — Use minimal ghee (1 tsp per 2 cups)
+- **Dry roasted makhana** — Zero oil, just heat and a pinch of salt
+- **Masala makhana** — Roasted with turmeric, black pepper, and salt (no sugar)
+- **Makhana kheer with jaggery** — In moderation, using jaggery instead of sugar
+
+### ❌ Avoid These
+- **Packaged flavored makhana** — Often contain hidden sugars and preservatives
+- **Caramel-coated makhana** — High sugar content defeats the purpose
+- **Deep-fried makhana** — Increases fat and calorie content significantly
+
+### Recommended Portion Size
+A safe portion for diabetics is **30-40g (about a small handful)** per serving. This provides all the nutritional benefits without overloading calories or carbs.
+
+## Scientific Evidence
+
+Several studies have examined makhana's effect on blood sugar:
+
+- A 2022 study found that makhana extract improved cholesterol levels in diabetic subjects
+- Research shows makhana's antioxidants (especially kaempferol) help reduce oxidative stress common in diabetic patients
+- The high potassium content (350mg per 100g) helps regulate blood pressure, which is often elevated in diabetics
+
+## Recipe: Diabetic-Friendly Masala Makhana
+
+**Ingredients:**
+- 2 cups Khirri Phool Makhana (raw)
+- 1 tsp ghee
+- ¼ tsp turmeric powder
+- ¼ tsp black pepper powder
+- A pinch of black salt
+
+**Method:**
+1. Heat ghee in a non-stick pan on low flame
+2. Add makhana and roast for 5-7 minutes until crispy
+3. Sprinkle turmeric, black pepper, and salt
+4. Toss well and cool
+
+**Nutrition per serving (40g):** ~139 calories, 4g protein, 0g fat, 28g carbs, 6g fiber. Net carbs: 22g. Safe for diabetic consumption.
+
+---
+
+**Want the purest, unadulterated makhana?** Khirri's raw Phool Makhana is 100% natural, FSSAI certified, and perfect for diabetic-friendly recipes. [Shop now](https://khirri.com/shop).
+    `,
+  },
+  // ===== NEW HEALTH BLOG POSTS (July 23, 2026) =====
+  {
+    slug: "makhana-for-weight-loss-complete-guide",
+    title: "Makhana for Weight Loss — The Complete Guide",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Discover why makhana is the ultimate weight loss snack. Learn about calories, fiber, protein, portion control, and 3 easy weight-loss makhana recipes.",
+    content: `
+Makhana (fox nuts) has become one of the most recommended snacks for weight loss, and for good reason. Light, crunchy, and naturally low in calories, this ancient Indian superfood is the perfect replacement for unhealthy fried snacks.
+
+## Why Makhana Helps with Weight Loss
+
+### Low in Calories
+A 30g serving of roasted makhana contains only about **104 calories**. Compare that to the same serving of potato chips (160 calories), fried namkeen (170 calories), or buttered popcorn (140 calories), and the savings add up quickly.
+
+### High in Fiber
+Makhana packs **14.5g of fiber per 100g**, keeping you full for longer and reducing the urge to snack between meals.
+
+### Good Source of Plant Protein
+With **9-10g of protein per 100g**, makhana helps preserve muscle mass during calorie restriction.
+
+### Low Glycemic Index
+Makhana has a low GI of under 50, meaning stable blood sugar, fewer cravings, and easier weight management.
+
+## Nutritional Comparison: Makhana vs Other Snacks
+
+| Snack (per 30g) | Calories | Fat | Fiber | Protein |
+|-----------------|----------|-----|-------|---------|
+| Roasted Makhana | 104 | less than 1g | 4.3g | 2.9g |
+| Potato Chips | 160 | 11g | 1g | 2g |
+| Fried Namkeen | 170 | 10g | 0.5g | 2.5g |
+| Buttered Popcorn | 140 | 8g | 2g | 2g |
+
+## 3 Simple Weight Loss Makhana Recipes
+
+### 1. Zero-Oil Roasted Makhana
+**Ingredients:** 2 cups Khirri Phool Makhana, black salt to taste
+**Method:** Dry roast makhana in a non-stick pan on low flame for 6-7 minutes, stirring continuously. Sprinkle black salt. Just 104 calories per serving.
+
+### 2. Metabolism-Boosting Masala Makhana
+**Ingredients:** 2 cups makhana, 1 tsp ghee, ½ tsp black pepper, ¼ tsp turmeric, pinch of cayenne, salt
+**Method:** Heat ghee, add makhana and roast until crispy. Sprinkle spices and toss.
+
+### 3. Makhana Chaat
+**Ingredients:** 1 cup roasted makhana, chopped onion, tomato, cucumber, lemon juice, chaat masala, coriander
+**Method:** Toss roasted makhana with chopped veggies and seasonings. A filling, low-calorie alternative to heavy street-food chaat.
+
+---
+
+**Ready to start your weight loss journey?** Stock up on Khirri's premium raw Phool Makhana. [Shop now](https://khirri.com/shop) or [order on WhatsApp](https://wa.me/918949359415).
+    `,
+  },
+  {
+    slug: "makhana-during-pregnancy-benefits",
+    title: "Makhana During Pregnancy — Safety, Benefits & How to Eat",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Is makhana safe during pregnancy? Learn about the nutritional benefits, Ayurvedic perspective, portion recommendations, and 2 easy pregnancy-safe makhana recipes.",
+    content: `
+Pregnancy is a time when every food choice matters. Makhana (fox nuts) is one of the safest and most nutritious snacks for expecting mothers — used for centuries in Indian households.
+
+## Nutritional Benefits of Makhana During Pregnancy
+
+### Calcium for Baby's Bone Development
+Makhana contains **60mg of calcium per 100g**, supporting your baby's bone, teeth, and heart development.
+
+### Iron for Healthy Blood
+Makhana provides plant-based iron to help maintain healthy hemoglobin levels during pregnancy.
+
+### Protein for Fetal Growth
+With **9-10g of protein per 100g**, makhana supports the growth of fetal tissues, including the brain and organs.
+
+### Magnesium for Muscle Cramps
+Makhana provides **160mg of magnesium per 100g**, helping reduce leg cramps and improve sleep quality during pregnancy.
+
+## Is Makhana Safe During Pregnancy?
+
+**Yes, makhana is completely safe during pregnancy.** It is naturally light, easy to digest, contains no caffeine or stimulants, and is gluten-free. In Ayurveda, makhana is classified as a sattvic (pure) food that cools the body and provides steady energy.
+
+## How Much to Eat
+
+A safe portion is **30-40g per day** (about 1 cup). Best enjoyed as a mid-morning or evening snack.
+
+## 2 Pregnancy-Safe Makhana Recipes
+
+### 1. Soothing Makhana Porridge
+**Ingredients:** ½ cup Khirri Phool Makhana (roasted and crushed), 1 cup milk, 1 tsp jaggery, ¼ tsp cardamom
+**Method:** Boil milk, add crushed makhana and simmer for 10 minutes. Add jaggery and cardamom.
+
+### 2. Lightly Spiced Ghee Makhana
+**Ingredients:** 2 cups Khirri Phool Makhana, 1 tsp ghee, pinch of turmeric, pinch of black pepper, rock salt
+**Method:** Heat ghee, roast makhana until golden. Sprinkle turmeric, pepper, and salt.
+
+---
+
+**Nourish your pregnancy with the best.** Khirri's premium Phool Makhana is 100% natural and hand-graded. [Shop now](https://khirri.com/shop) or [order on WhatsApp](https://wa.me/918949359415).
+    `,
+  },
+  {
+    slug: "makhana-for-babies-toddlers",
+    title: "Makhana for Babies & Toddlers — A Parent's Guide",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "At what age can babies eat makhana? Learn about nutritional benefits for children, how to prepare makhana safely, and easy recipes your toddler will love.",
+    content: `
+Makhana (fox nuts) is a time-tested Indian superfood that has been fed to babies and toddlers for generations. Light, nutritious, and easy to digest, it is one of the healthiest snack options for your little one.
+
+## At What Age Can Babies Eat Makhana?
+
+- **Makhana powder (porridge/mix):** From **8-10 months**
+- **Makhana kheer or porridge:** From **12 months+**
+- **Whole makhana finger food:** From **2 years+** (supervise always)
+
+## Nutritional Benefits for Growing Children
+
+### Calcium for Strong Bones
+Makhana provides **60mg of calcium per 100g** — an excellent dairy-free calcium source for growing bones.
+
+### Protein for Development
+With **9-10g of protein per 100g**, makhana supports muscle development and overall growth.
+
+### Magnesium for Brain Function
+Makhana is rich in **magnesium (160mg per 100g)**, supporting cognitive function and concentration.
+
+### Naturally Gluten-Free
+Safe for children with gluten sensitivity or celiac disease.
+
+## 3 Easy Recipes for Babies & Toddlers
+
+### 1. Makhana Baby Porridge (8+ months)
+**Ingredients:** 2 tbsp makhana powder, ½ cup warm milk, pinch of cardamom
+**Method:** Roast makhana, grind to powder, mix with warm milk. A 2-minute nutritious breakfast.
+
+### 2. Makhana Fruit Mix (12+ months)
+**Ingredients:** ¼ cup crushed makhana, ½ cup mashed banana or mango, 1 tbsp yogurt
+**Method:** Layer yogurt and fruit, top with crushed makhana. Fun crunch for toddlers.
+
+### 3. Toddler Lunchbox Snack (2+ years)
+**Ingredients:** 1 cup Khirri Phool Makhana, 1 tsp ghee, pinch of rock salt (optional)
+**Method:** Roast in ghee until golden. Cool and pack — healthier than packaged chips or biscuits.
+
+---
+
+**Give your child the healthiest start.** Khirri's premium Phool Makhana is 100% natural and additive-free. [Shop now](https://khirri.com/shop) or [order on WhatsApp](https://wa.me/918949359415).
+    `,
+  },
+  // ===== COMPARISON & FITNESS BLOG POSTS (July 23, 2026) =====
+  {
+    slug: "how-to-roast-makhana-at-home",
+    title: "How to Roast Makhana at Home — 3 Easy Methods",
+    category: "Recipes",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Learn how to roast makhana at home with 3 easy methods: dry roast on stove, ghee roast, and oven or air fryer. Plus seasoning ideas, storage tips, and FAQs.",
+    content: `
+Roasted makhana (fox nuts) is one of India's favourite guilt-free snacks. Roasting makhana at home takes under 10 minutes and lets you control every ingredient.
+
+## Method 1: Dry Roast on Stove (Classic and Oil-Free)
+The simplest way requires nothing but a heavy-bottomed pan and low heat.
+
+1. Heat a wide non-stick or cast-iron pan over low to medium-low flame
+2. Add 1 cup of raw makhana in a single layer
+3. Stir continuously for 4-6 minutes until crisp and crackling
+4. Spread on a plate to cool
+
+**Pro tip:** Roast in small batches. Overcrowding traps steam and makes them chewy.
+
+## Method 2: Ghee Roast (Rich and Aromatic)
+1. Heat 1 teaspoon of ghee in a pan over low heat
+2. Add 1 cup of raw makhana and toss to coat evenly
+3. Roast for 5-7 minutes, stirring frequently, until golden and crisp
+4. Spread on paper towel to absorb excess ghee
+
+**Seasoning:** While still warm, toss with black salt, roasted cumin powder, and black pepper.
+
+## Method 3: Oven or Air Fryer (Hands-Free)
+**Oven:** Preheat to 150°C. Spread makhana in a single layer on a baking tray. Bake 8-10 minutes, shaking halfway.
+
+**Air fryer:** Set to 160°C. Air fry for 5-6 minutes, shaking once mid-way.
+
+## Storage Tips
+- Cool completely before storing
+- Use an airtight container at room temperature for up to 2 weeks
+- Never refrigerate — moisture will soften them
+- Re-roast for 2 minutes to revive crunch
+
+---
+
+**Ready for the best roasted makhana?** [Shop premium raw makhana](https://khirri.com/shop).
+    `,
+  },
+  {
+    slug: "makhana-nutrition-facts-calories-protein",
+    title: "Makhana Nutrition Facts — Calories, Protein, Carbs & More",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Complete makhana nutrition facts per 100g: calories, protein, carbs, fat, fibre, and key micronutrients. Compare makhana vs almonds, cashews, walnuts, and popcorn.",
+    content: `
+Makhana (fox nuts) is one of India's most nutrient-dense snacks. Here is the complete nutrition breakdown.
+
+## Makhana Nutrition Facts (Per 100g)
+
+| Nutrient | Amount |
+|----------|--------|
+| Calories | 350 kcal |
+| Protein | 9.7 g |
+| Carbohydrates | 76.9 g |
+| Dietary Fibre | 2.5 g |
+| Total Fat | 0.6 g |
+| Saturated Fat | 0.1 g |
+| Magnesium | 65 mg |
+| Potassium | 500 mg |
+| Calcium | 60 mg |
+| Iron | 1.5 mg |
+| Sodium | 2 mg |
+
+## Makhana vs Other Snacks (Per 100g)
+
+| Snack | Calories | Protein | Fat |
+|-------|----------|---------|-----|
+| Makhana | 350 kcal | 9.7 g | 0.6 g |
+| Almonds | 579 kcal | 21 g | 50 g |
+| Cashews | 553 kcal | 18 g | 44 g |
+| Walnuts | 654 kcal | 15 g | 65 g |
+| Popcorn (air-popped) | 387 kcal | 13 g | 4 g |
+
+Makhana has the fewest calories and lowest fat of any snack on this list.
+
+## Health Benefits Summary
+- **Weight management:** 30g serving is ~105 calories
+- **Heart health:** Extremely low sodium (2mg per 100g), zero cholesterol
+- **Blood sugar:** Low glycemic index with resistant starch
+- **Bone health:** 60mg calcium per 100g
+
+## Portion Guide
+- Standard snack: 30g (cupped handful) = 105 calories
+- Post-workout: 40g = 140 calories plus 3.9g protein
+- Weight loss: 20g = 70 calories
+
+---
+
+**Shop premium quality makhana.** [Order now](https://khirri.com/shop).
+    `,
+  },
+  {
+    slug: "makhana-vs-almonds-complete-comparison",
+    title: "Makhana vs Almonds — Which Is Healthier? Complete Comparison",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Makhana vs almonds complete nutrition comparison. Protein, calories, fat, and best uses for weight loss, muscle building, heart health, and diabetes. Which is better for your goals?",
+    content: `
+Almonds have long held the crown as the go-to healthy snack. But makhana (fox nuts) is rapidly gaining ground. Which one deserves a spot in your kitchen? It depends on your goals.
+
+## Nutrition Comparison: Makhana vs Almonds (Per 100g)
+
+| Nutrient | Makhana | Almonds |
+|----------|---------|---------|
+| Calories | 350 kcal | 579 kcal |
+| Protein | 9.7 g | 21 g |
+| Total Fat | 0.6 g | 50 g |
+| Carbs | 76.9 g | 22 g |
+| Fibre | 2.5 g | 12.5 g |
+| Magnesium | 65 mg | 270 mg |
+| Calcium | 60 mg | 269 mg |
+
+## Best Choice for Each Goal
+
+### Weight Loss: Makhana
+With 40% fewer calories and 98% less fat, makhana gives you more crunch per calorie.
+
+### Building Muscle: Almonds
+Almonds have more than double the protein plus magnesium for recovery.
+
+### Heart Health: Both
+Makhana for negligible sodium and zero cholesterol. Almonds for healthy fats and vitamin E.
+
+### Diabetes Management: Makhana
+Makhana's resistant starch digests slowly for better blood sugar control.
+
+## The Verdict
+Neither is objectively better. Almonds are a protein-and-fat-dense powerhouse. Makhana is a low-calorie, low-fat crunchy snack you can eat in larger volumes. Keep both in your rotation.
+
+---
+
+**Find both at Khirri.** [Shop now](https://khirri.com/shop).
+    `,
+  },
+  {
+    slug: "makhana-for-gym-fitness-snack",
+    title: "Makhana for Gym & Fitness — The Perfect Pre/Post Workout Snack?",
+    category: "Health & Nutrition",
+    date: "July 23, 2026",
+    readTime: "5 min read",
+    author: "Khirri Nutrition Team",
+    excerpt: "Is makhana good for the gym? Discover why fox nuts work as a pre and post workout snack: slow-release energy, protein, magnesium for muscle recovery, and simple fitness recipes.",
+    content: `
+When you're serious about fitness, every snack choice matters. Makhana (fox nuts) is gaining traction in the fitness community for good reason.
+
+## Why Makhana Works for Fitness
+
+### 1. Slow-Release Energy
+Makhana is rich in complex carbohydrates and resistant starch, providing steady energy throughout 60-90 minute training sessions without blood sugar crashes.
+
+### 2. Protein for Muscle Support
+With 9.7g of protein per 100g, a 40g post-workout serving delivers nearly 4g of protein. Great for plant-based athletes.
+
+### 3. Magnesium for Recovery
+Makhana contains 65mg of magnesium per 100g, which helps reduce muscle cramps, supports sleep quality, and aids protein synthesis.
+
+### 4. Low Fat, Easy Digestion
+With only 0.6g of fat per 100g, makhana digests quickly and won't sit heavy during a workout.
+
+## Pre-Workout vs Post-Workout
+
+| Timing | Why Makhana Works |
+|--------|-------------------|
+| Pre-Workout (60-90 min before) | Complex carbs provide sustained energy without crash |
+| Post-Workout (within 30 min) | Carbs replenish glycogen, protein repairs muscle |
+
+## Makhana vs Other Fitness Snacks
+
+| Snack (100g) | Calories | Protein | Fat | Best For |
+|--------------|----------|---------|-----|----------|
+| Makhana | 350 kcal | 9.7g | 0.6g | Pre-workout, light refuel |
+| Protein Bar | 400-500 | 20-30g | 10-20g | Post-workout protein |
+| Banana | 105 kcal | 1.3g | 0.4g | Quick pre-workout energy |
+
+## Simple Fitness Recipes
+
+**Pre-Workout Energy Mix:** 30g roasted makhana + 1 small banana. Eat 60 min before training.
+
+**Post-Workout Recovery Bowl:** 40g roasted makhana + 1 scoop protein powder + handful blueberries.
+
+**Gym Bag Trail Mix:** 30g makhana + 15g almonds + 10g dark chocolate.
+
+---
+
+**Fuel your fitness with Khirri makhana.** [Shop now](https://khirri.com/shop).
+    `,
+  },
 ];
 export function getBlogPostBySlug(slug: string): BlogPost | undefined {
   return blogPosts.find((post) => post.slug === slug);

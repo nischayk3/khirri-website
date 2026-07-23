@@ -1,20 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail } from "lucide-react";
+import { ShieldCheck, Award, Sprout } from "lucide-react";
 import styles from "./Footer.module.css";
 import NewsletterForm from "./NewsletterForm";
 
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Shop", href: "/shop" },
-  { label: "Why Khirri", href: "/#why-khirri" },
+  { label: "About Us", href: "/about" },
   { label: "Blog", href: "/blog" },
-  { label: "Contact", href: "/#contact" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Reviews", href: "/reviews" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const b2bLinks = [
   { label: "Bulk Supply Jaipur", href: "/bulk-makhana-supplier-jaipur" },
   { label: "Wholesale Bangalore", href: "/wholesale-makhana-bangalore" },
+  { label: "Wholesale Pricing", href: "/wholesale-makhana-pricing" },
+  { label: "Flavored Makhana", href: "/flavored-makhana" },
   { label: "Makhana Cookies Bulk", href: "/makhana-cookies-wholesale" },
   { label: "Makhana Price Jaipur", href: "/jaipur-makhana-price-guide" },
   { label: "Request Sample", href: "/sample-request" },
@@ -95,6 +99,11 @@ export default function Footer() {
               Trusted B2B supplier and retail brand based in Vaishali Nagar,
               Jaipur, Rajasthan.
             </p>
+            <div className={styles.trustBadges}>
+              <span className={styles.trustBadge}><ShieldCheck size={14} /> FSSAI Certified</span>
+              <span className={styles.trustBadge}><Award size={14} /> 100% Natural</span>
+              <span className={styles.trustBadge}><Sprout size={14} /> Gluten Free</span>
+            </div>
             <div className={styles.socials}>
               {socialLinks.map((s) => {
                 const Icon = s.Icon;

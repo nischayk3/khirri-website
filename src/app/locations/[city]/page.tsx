@@ -7,7 +7,7 @@ import Footer from "@/app/components/Footer";
 import WhatsAppFAB from "@/app/components/WhatsAppFAB";
 import { faqSchema } from "@/lib/schema";
 
-const validCities = ["jaipur", "bangalore"];
+const validCities = ["jaipur", "bangalore", "delhi", "mumbai", "pune", "hyderabad", "chennai", "kolkata", "ahmedabad"];
 
 const cityData = {
   jaipur: {
@@ -45,7 +45,133 @@ const cityData = {
         a: "Wholesale prices in Bangalore depend on the order volume and grade (e.g., Hand-picked 16mm vs standard). We guarantee highly competitive pan-India pricing because we eliminate the middlemen."
       }
     ]
-  }
+  },
+  delhi: {
+    name: "Delhi",
+    state: "Delhi",
+    title: "Premium Makhana Supplier in Delhi — Bulk & Retail | Khirri",
+    description: "Get premium quality Phool Makhana delivered to Delhi NCR. Khirri supplies bulk raw makhana, makhana cookies, and dry fruits to businesses and homes across Delhi.",
+    phone: "+918949359415",
+    address: "Direct Supply to Delhi NCR from our Jaipur hub",
+    faq: [
+      {
+        q: "How fast can you deliver makhana to Delhi?",
+        a: "We deliver to Delhi NCR within 3-4 business days from our Jaipur hub. Same-day dispatch for orders placed before 12 PM."
+      },
+      {
+        q: "Do you supply makhana to restaurants in Delhi?",
+        a: "Yes, we supply bulk makhana to restaurants, cafes, and hotels across Delhi. Competitive wholesale pricing with FSSAI certification."
+      }
+    ]
+  },
+  mumbai: {
+    name: "Mumbai",
+    state: "Maharashtra",
+    title: "Premium Makhana Supplier in Mumbai — B2B & Retail | Khirri",
+    description: "Order premium Phool Makhana in Mumbai. Khirri delivers fresh, hand-graded fox nuts from Bihar to your doorstep in Mumbai. Bulk B2B supply available.",
+    phone: "+918949359415",
+    address: "Direct Supply to Mumbai from our Jaipur hub",
+    faq: [
+      {
+        q: "What is the makhana price in Mumbai?",
+        a: "Khirri offers competitive pricing for Mumbai buyers starting from ₹900/kg for 4 Suta grade. Prices include GST and moisture-protected packaging."
+      },
+      {
+        q: "Do you supply makhana to dabbawalas or tiffin services?",
+        a: "Yes, we work with food businesses across Mumbai. Bulk orders with custom packaging available."
+      }
+    ]
+  },
+  pune: {
+    name: "Pune",
+    state: "Maharashtra",
+    title: "Premium Makhana Supplier in Pune | Khirri",
+    description: "Get premium quality Phool Makhana delivered to Pune. Khirri supplies bulk makhana and dry fruits to businesses, health stores, and homes across Pune.",
+    phone: "+918949359415",
+    address: "Direct Supply to Pune from our Jaipur hub",
+    faq: [
+      {
+        q: "Do you deliver makhana to Pune?",
+        a: "Yes, we ship to all areas of Pune including Kharadi, Hinjawadi, Baner, Koregaon Park, and Viman Nagar. Delivery within 4-5 business days."
+      },
+      {
+        q: "What bulk quantities are available for Pune businesses?",
+        a: "We offer 8kg sacks up to 500kg+ for Pune businesses. Volume discounts available for regular orders."
+      }
+    ]
+  },
+  hyderabad: {
+    name: "Hyderabad",
+    state: "Telangana",
+    title: "Premium Makhana Supplier in Hyderabad | Khirri",
+    description: "Order premium Phool Makhana in Hyderabad. Khirri hand-grades and delivers the finest fox nuts from Bihar to homes and businesses in Hyderabad.",
+    phone: "+918949359415",
+    address: "Direct Supply to Hyderabad from our Jaipur hub",
+    faq: [
+      {
+        q: "Do you deliver to Hyderabad?",
+        a: "Yes, we deliver to all areas of Hyderabad including Gachibowli, Hitech City, Madhapur, Jubilee Hills, and Banjara Hills. 5-6 business days delivery."
+      },
+      {
+        q: "What grades of makhana do you supply to Hyderabad?",
+        a: "We supply 4 Suta, 5+ Suta, and 6+ Jumbo grades. All hand-graded and FSSAI certified."
+      }
+    ]
+  },
+  chennai: {
+    name: "Chennai",
+    state: "Tamil Nadu",
+    title: "Premium Makhana Supplier in Chennai | Khirri",
+    description: "Looking for premium makhana in Chennai? Khirri delivers fresh, hand-graded Phool Makhana from Bihar to Chennai. B2B and retail orders welcome.",
+    phone: "+918949359415",
+    address: "Direct Supply to Chennai from our Jaipur hub",
+    faq: [
+      {
+        q: "Do you ship makhana to Chennai?",
+        a: "Yes, we ship to all parts of Chennai including OMR, ECR, Velachery, Anna Nagar, and T Nagar. Delivery within 5-7 business days."
+      },
+      {
+        q: "Is makhana popular in South Indian cuisine?",
+        a: "While traditionally more common in North India, makhana is growing rapidly in popularity across South India as a healthy snack. It's also used in traditional Iyer weddings and fasting dishes."
+      }
+    ]
+  },
+  kolkata: {
+    name: "Kolkata",
+    state: "West Bengal",
+    title: "Premium Makhana Supplier in Kolkata | Khirri",
+    description: "Get premium Phool Makhana delivered to Kolkata. Khirri supplies hand-graded fox nuts from Bihar at competitive wholesale and retail prices.",
+    phone: "+918949359415",
+    address: "Direct Supply to Kolkata from Bihar via our Jaipur hub",
+    faq: [
+      {
+        q: "How close is your supply chain to West Bengal?",
+        a: "Khirri sources directly from Bihar, which shares a border with West Bengal. This means faster delivery to Kolkata — typically 3-4 business days."
+      },
+      {
+        q: "Do you offer discounts for bulk orders in Kolkata?",
+        a: "Yes, we offer volume-based discounts for Kolkata buyers. Contact us on WhatsApp for a custom quote based on your order size."
+      }
+    ]
+  },
+  ahmedabad: {
+    name: "Ahmedabad",
+    state: "Gujarat",
+    title: "Premium Makhana Supplier in Ahmedabad | Khirri",
+    description: "Order premium Phool Makhana in Ahmedabad. Khirri delivers fresh, hand-graded fox nuts from Bihar to businesses and homes across Ahmedabad.",
+    phone: "+918949359415",
+    address: "Direct Supply to Ahmedabad from our Jaipur hub",
+    faq: [
+      {
+        q: "What is the delivery time to Ahmedabad?",
+        a: "We deliver to Ahmedabad within 4-5 business days. Being close to Jaipur, Gujarat orders arrive faster than most other states."
+      },
+      {
+        q: "Do you supply makhana for fasting (vrat/upvas) in Gujarat?",
+        a: "Yes! Makhana is a popular fasting food in Gujarat. We supply pure, unflavored makhana perfect for Navratri, Ekadashi, and other fasting days."
+      }
+    ]
+  },
 };
 
 export async function generateStaticParams() {
@@ -81,11 +207,16 @@ export default async function LocationPage({ params }: { params: Promise<{ city:
   // LocalBusiness Schema tailored to the city
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["FoodStore", "WholesaleStore"],
+    "@type": ["FoodStore", "GroceryStore", "Store"],
     "name": `Khirri Makhana - ${data.name}`,
     "description": data.description,
     "url": `https://khirri.com/locations/${city}`,
     "telephone": data.phone,
+    "priceRange": "₹₹",
+    "areaServed": [
+      { "@type": "City", "name": data.name },
+      { "@type": "State", "name": data.state },
+    ],
     "address": {
       "@type": "PostalAddress",
       "addressLocality": data.name,

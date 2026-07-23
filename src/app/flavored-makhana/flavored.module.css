@@ -1,0 +1,291 @@
+/* Flavored Makhana Page Styles */
+.hero {
+  background: linear-gradient(135deg, #1a0a00 0%, #3d2410 40%, #5c3a1e 100%);
+  color: white;
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+  position: relative;
+}
+
+.heroContent {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,105,0,0.2);
+  color: #ff6900;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+
+.heroHighlight { color: #ff6900; }
+
+.heroSubtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.8);
+  margin: 0 0 2rem;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ff6900;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(255,105,0,0.3);
+}
+.primaryBtn:hover { background: #e55e00; transform: translateY(-1px); }
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.3);
+  transition: all 0.2s;
+}
+.secondaryBtn:hover { border-color: white; }
+
+.badgesRow {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.08);
+  padding: 5px 12px;
+  border-radius: 50px;
+  color: rgba(255,255,255,0.8);
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+.section { padding: 5rem 0; }
+.sectionAlt { padding: 5rem 0; background: var(--brand-cream); }
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--brand-brown-dark);
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.sectionSub {
+  color: var(--text-muted);
+  text-align: center;
+  max-width: 550px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+/* Flavor Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.flavorCard {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(92,58,30,0.06);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.flavorCard:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(92,58,30,0.12); }
+
+.flavorEmoji { font-size: 3rem; margin-bottom: 1rem; }
+
+.flavorName {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--brand-brown-dark);
+  margin: 0 0 0.5rem;
+}
+
+.flavorDesc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0 0 1rem;
+  flex: 1;
+}
+
+.flavorMeta { margin-bottom: 1rem; }
+
+.flavorPrice {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ff6900;
+}
+
+.flavorPack {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.addBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-cream);
+  color: var(--text-muted);
+  border: 1px solid var(--brand-tan);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: not-allowed;
+  font-family: inherit;
+}
+
+.note {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem;
+  background: #fff8f0;
+  border-radius: 12px;
+  border: 1px solid rgba(255,105,0,0.15);
+}
+.note p { margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+.note a { color: #ff6900; font-weight: 700; text-decoration: none; }
+
+/* Benefits */
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 750px;
+  margin: 2rem auto 0;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  padding: 0.875rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--brand-brown-dark);
+}
+.benefitIcon { color: #16a34a; flex-shrink: 0; }
+
+/* FAQ */
+.faqGrid {
+  max-width: 700px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faqItem {
+  background: white;
+  border: 1px solid var(--brand-tan);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.faqQ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--brand-brown-dark);
+  cursor: pointer;
+  list-style: none;
+  font-size: 0.95rem;
+}
+.faqQ::-webkit-details-marker { display: none; }
+
+.faqToggle { font-size: 1.25rem; color: #ff6900; transition: transform 0.2s; }
+.faqItem[open] .faqToggle { transform: rotate(45deg); }
+
+.faqA { padding: 0 1.25rem 1rem; border-top: 1px solid var(--brand-cream); }
+.faqA p { color: var(--text-muted); line-height: 1.6; margin: 0.75rem 0 0; font-size: 0.9rem; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #3d2410, #5c3a1e);
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+.cta h2 { font-family: var(--font-heading); font-size: 2rem; font-weight: 800; margin: 0 0 1rem; }
+.cta p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 2rem; line-height: 1.6; }
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ff6900;
+  color: white;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(255,105,0,0.3);
+}
+.ctaBtn:hover { background: #e55e00; transform: translateY(-1px); }
+
+@media (max-width: 968px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .benefitsGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .heroTitle { font-size: 2rem; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+  .flavorCard { padding: 1.5rem 1rem; }
+  .flavorEmoji { font-size: 2rem; }
+  .sectionTitle { font-size: 1.75rem; }
+}

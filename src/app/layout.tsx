@@ -89,15 +89,21 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": ["FoodStore", "WholesaleStore", "GroceryStore"],
+      "@type": ["FoodStore", "GroceryStore", "Store"],
       "@id": "https://khirri.com/#business",
-      name: "Khirri phool makhana",
+      name: "Khirri Phool Makhana",
+      alternateName: [
+        "Khirri Makhana Jaipur",
+        "Khirri Phool Makhana Wholesale",
+      ],
       description:
         "Premium Phool Makhana (fox nuts / lotus seeds) supplier and brand based in Vaishali Nagar, Jaipur. Direct farm sourcing from Bihar for B2B wholesale and branded retail.",
       url: "https://khirri.com",
       logo: "https://khirri.com/khirri-logo.webp",
       image: "https://khirri.com/og-image.jpg",
       telephone: "+918949359415",
+      priceRange: "₹₹",
+      foundingDate: "2024",
       address: {
         "@type": "PostalAddress",
         streetAddress: "AA-7, Nursery Cir, Acharya Vinoba Bhave Nagar, B Block, Vaishali Nagar",
@@ -108,9 +114,10 @@ const jsonLd = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: "26.9124",
-        longitude: "75.7873",
+        latitude: "26.91115",
+        longitude: "75.73583",
       },
+      hasMap: "https://maps.google.com/maps?cid=17751742516743452233",
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -119,18 +126,64 @@ const jsonLd = {
           closes: "22:00",
         },
       ],
-      sameAs: [
-        "https://maps.app.goo.gl/gwn3rdAANC1TmXVS6",
-        "https://www.instagram.com/khirri.makhana",
+      areaServed: [
+        {
+          "@type": "City",
+          name: "Jaipur",
+          sameAs: "https://en.wikipedia.org/wiki/Jaipur",
+        },
+        {
+          "@type": "State",
+          name: "Rajasthan",
+        },
       ],
+      knowsAbout: [
+        "Bulk Makhana Supplier in Jaipur",
+        "Phool Makhana Wholesale",
+        "Premium Raw Makhana Fox Nuts",
+        "6+ Suta Jumbo Makhana",
+        "Makhana Cookies",
+        "Wholesale Dry Fruits Jaipur",
+        "Bihar Sourced Makhana",
+        "Private Label Makhana Packaging",
+      ],
+      currenciesAccepted: "INR",
+      paymentAccepted: "Cash, UPI, Credit Card, Debit Card, Net Banking",
+      hasOfferCatalog: {
+        "@type": "OfferCatalog",
+        name: "Makhana, Cookies & Dry Fruits",
+        itemListElement: [
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Raw Phool Makhana" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Makhana Cookies" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Premium Dry Fruits" } },
+          { "@type": "Offer", itemOffered: { "@type": "Product", name: "Bulk B2B Makhana Supply" } },
+        ],
+      },
+      sameAs: [
+        "https://maps.google.com/maps?cid=17751742516743452233",
+        "https://www.instagram.com/khirri.makhana",
+        "https://www.linkedin.com/company/khirri-trading-company",
+        "https://twitter.com/khirri",
+        "https://www.youtube.com/@khirri",
+      ],
+      parentOrganization: {
+        "@type": "Organization",
+        name: "Khirri Trading Company",
+        "@id": "https://khirri.com/#org",
+      },
     },
     {
       "@type": "Organization",
       "@id": "https://khirri.com/#org",
       name: "Khirri Trading Company",
       url: "https://khirri.com",
+      logo: "https://khirri.com/khirri-logo.webp",
       foundingDate: "2024",
       areaServed: "IN",
+      sameAs: [
+        "https://www.instagram.com/khirri.makhana",
+        "https://www.linkedin.com/company/khirri-trading-company",
+      ],
     },
     {
       "@type": "Product",
@@ -162,6 +215,9 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning>
+        <div style={{ background: "#2d5a1e", color: "white", textAlign: "center", padding: "6px 16px", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.02em" }}>
+          Free shipping on orders above Rs 499 &middot; 100% Natural &amp; FSSAI Certified
+        </div>
         <AuthProvider>
           <CartProvider>
             {children}

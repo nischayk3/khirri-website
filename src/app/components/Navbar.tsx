@@ -12,8 +12,8 @@ import styles from "./Navbar.module.css";
 const navLinks = [
   { label: "Home", href: "/#home" },
   { label: "Shop", href: "/shop" },
-  { label: "Why Khirri", href: "/#why-khirri" },
-  { label: "About", href: "/#about" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {

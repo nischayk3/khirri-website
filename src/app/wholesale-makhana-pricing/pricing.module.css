@@ -1,0 +1,198 @@
+/* Wholesale Pricing Page Styles */
+.hero {
+  background: linear-gradient(135deg, #1a3410 0%, #2d5a1e 40%, #3d7a30 100%);
+  color: white;
+  padding: 6rem 2rem 3rem;
+  text-align: center;
+}
+.heroContent { max-width: 680px; margin: 0 auto; }
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--brand-tan);
+}
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+.highlight { color: #8bc34a; }
+.heroSub { font-size: 1.05rem; color: rgba(255,255,255,0.8); margin: 0 0 2rem; }
+.heroCta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+.ctaPrimary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #8bc34a; color: #1a3410;
+  padding: 14px 32px; border-radius: 12px;
+  font-weight: 700; text-decoration: none;
+  transition: all 0.2s;
+}
+.ctaPrimary:hover { background: #9dce5b; transform: translateY(-1px); }
+
+.ctaSecondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent; color: white;
+  padding: 14px 32px; border-radius: 12px;
+  font-weight: 600; text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.3);
+}
+.ctaSecondary:hover { border-color: white; }
+
+.container { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+.section { padding: 5rem 0; }
+.sectionAlt { padding: 5rem 0; background: var(--brand-cream); }
+
+.sectionTitle {
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--brand-brown-dark);
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+.sectionSub { color: var(--text-muted); text-align: center; margin: 0 0 3rem; }
+
+/* Price Table */
+.priceTable {
+  border: 1px solid var(--brand-tan);
+  border-radius: 16px;
+  overflow: hidden;
+  background: white;
+  margin-bottom: 2rem;
+}
+.priceRowHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: var(--brand-brown-dark);
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.priceRow {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--brand-cream);
+  align-items: center;
+}
+.priceRow:last-child { border-bottom: none; }
+.priceRow:nth-child(even) { background: #faf7f2; }
+.colGrade { font-size: 0.95rem; }
+.colSize { font-size: 0.85rem; color: var(--text-muted); }
+.colDesc { font-size: 0.85rem; color: var(--text-muted); }
+.priceVal { font-size: 1.25rem; font-weight: 800; color: #5c3a1e; }
+
+/* Volume Tiers */
+.volumeSection {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(92,58,30,0.06);
+  margin-bottom: 2rem;
+}
+.volumeSection h3 {
+  font-family: var(--font-heading);
+  color: var(--brand-brown-dark);
+  text-align: center;
+  margin: 0 0 1.5rem;
+  font-size: 1.3rem;
+}
+.volumeGrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1rem; }
+.volumeCard {
+  text-align: center;
+  padding: 1.25rem;
+  border: 1px solid var(--brand-tan);
+  border-radius: 12px;
+  transition: all 0.2s;
+}
+.volumeCard:hover { border-color: #8bc34a; box-shadow: 0 4px 15px rgba(139,195,74,0.1); }
+.volumeBadge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #8bc34a;
+  background: #f1f8e9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+.volumeAmt { display: block; font-weight: 700; color: var(--brand-brown-dark); font-size: 0.95rem; margin-bottom: 0.25rem; }
+.volumeDisc { display: block; font-size: 0.8rem; color: #2d5a1e; font-weight: 600; }
+
+/* Trust Strip */
+.trustStrip {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-brown);
+}
+
+/* Testimonials */
+.testGrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 900px; margin: 2rem auto 0; }
+.testCard { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(92,58,30,0.06); }
+.testText { font-style: italic; color: var(--text-muted); line-height: 1.6; margin: 0 0 1rem; font-size: 0.9rem; }
+.testAuthor { font-size: 0.85rem; font-weight: 600; color: var(--brand-brown-dark); margin: 0; }
+
+/* Steps */
+.stepsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+.stepCard { text-align: center; background: white; border-radius: 16px; padding: 2rem 1.5rem; box-shadow: 0 4px 20px rgba(92,58,30,0.06); }
+.stepNum {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: #8bc34a; color: white;
+  font-size: 1.25rem; font-weight: 800;
+  margin-bottom: 1rem;
+}
+.stepCard h4 { font-family: var(--font-heading); color: var(--brand-brown-dark); margin: 0 0 0.5rem; }
+.stepCard p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0; }
+
+/* CTA */
+.cta {
+  background: linear-gradient(135deg, #1a3410, #2d5a1e);
+  color: white;
+  text-align: center;
+  padding: 4rem 0;
+}
+.cta h2 { font-family: var(--font-heading); font-size: 2rem; margin: 0 0 1rem; }
+.cta p { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 2rem; }
+.ctaBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #8bc34a; color: #1a3410;
+  padding: 14px 32px; border-radius: 12px;
+  font-weight: 700; text-decoration: none;
+  transition: all 0.2s;
+}
+.ctaBtn:hover { background: #9dce5b; transform: translateY(-1px); }
+
+@media (max-width: 768px) {
+  .heroTitle { font-size: 2rem; }
+  .priceRowHeader, .priceRow { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .priceRowHeader span:last-child, .priceRow span:last-child { text-align: right; }
+  .volumeGrid { grid-template-columns: repeat(2, 1fr); }
+  .testGrid { grid-template-columns: 1fr; }
+  .stepsGrid { grid-template-columns: repeat(2, 1fr); }
+}

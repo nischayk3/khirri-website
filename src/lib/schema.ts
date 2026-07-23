@@ -9,12 +9,16 @@ export function productSchema(product: Product, variant: ProductVariant) {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
+    "@id": `https://khirri.com/product/${product.slug}#product`,
     name: product.name,
     description: product.metaDescription || product.description,
     image: product.gallery?.length
       ? product.gallery.map((img) => `https://khirri.com${img}`)
       : [`https://khirri.com${product.image}`],
-    brand: { "@type": "Brand", name: "Khirri" },
+    brand: { "@type": "Brand", name: "Khirri", url: "https://khirri.com" },
+    sku: (product as any).sku || product.slug,
+    mpn: (product as any).sku || product.slug,
+    ...((product as any).gtin ? { gtin: (product as any).gtin } : {}),
     offers: {
       "@type": "Offer",
       price: variant.price,
@@ -26,6 +30,23 @@ export function productSchema(product: Product, variant: ProductVariant) {
       priceValidUntil: new Date(
         Date.now() + 90 * 24 * 60 * 60 * 1000
       ).toISOString().split("T")[0],
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: { "@type": "MonetaryAmount", value: "49", currency: "INR" },
+        shippingDestination: [{ "@type": "DefinedRegion", addressCountry: "IN" }],
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: { "@type": "QuantitativeValue", minValue: 1, maxValue: 2, unitCode: "DAY" },
+          transitTime: { "@type": "QuantitativeValue", minValue: 3, maxValue: 7, unitCode: "DAY" },
+        },
+      },
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "IN",
+        returnPolicyCategory: "https://schema.org/MerchantReturnReturnFees",
+        merchantReturnDays: 3,
+        returnMethod: "https://schema.org.ReturnByMail",
+      },
     },
     ...(product.nutrition
       ? {
@@ -121,12 +142,16 @@ export function localBusinessSchema(params: {
 }) {
   return {
     "@context": "https://schema.org",
-    "@type": ["FoodStore", "WholesaleStore"],
+    "@type": ["FoodStore", "GroceryStore", "Store"],
     name: `Khirri Makhana — ${params.city}`,
     description: params.description,
     url: `https://khirri.com${params.url}`,
     telephone: params.phone,
-    areaServed: ["Jaipur", "Bangalore", "India"],
+    priceRange: "₹₹",
+    areaServed: [
+      { "@type": "City", name: params.city },
+      { "@type": "State", name: params.state },
+    ],
     ...(params.address
       ? {
           address: {

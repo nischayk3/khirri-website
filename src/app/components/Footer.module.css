@@ -59,6 +59,25 @@
   max-width: 340px;
 }
 
+.trustBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.trustBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--brand-cream);
+  background: rgba(255,255,255,0.08);
+  padding: 4px 10px;
+  border-radius: 50px;
+  letter-spacing: 0.02em;
+}
+
 .socials {
   display: flex;
   gap: var(--space-3);
