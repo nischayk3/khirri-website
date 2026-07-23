@@ -209,6 +209,7 @@ export default function RootLayout({
     <html lang="en-IN" className={`${playfair.variable} ${inter.variable}`}>
       <head>
         <meta name="theme-color" content="#5c3a1e" />
+        <meta name="msvalidate.01" content="6D3A80C8B5FF99C2CEF565E1D92ECD47" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
