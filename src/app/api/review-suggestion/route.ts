@@ -1,111 +1,382 @@
 import { NextRequest, NextResponse } from "next/server";
+import { db } from "@/lib/firebase-admin";
 
-const GEMINI_API_KEY = process.env.GEMINI_API_KEY || "AIzaSyA6ZneWjFui4lUL6BSQ8Q8kBrlu2U2Kz2o";
-const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+// 6 distinct writing personas for diversity
+const PERSONAS = [
+  {
+    id: "casual-friendly",
+    instruction:
+      "Write like a casual, friendly Indian customer texting a friend. Short sentences, maybe one emoji. Keep it under 40 words.",
+  },
+  {
+    id: "detail-oriented",
+    instruction:
+      "Write like a customer who notices details — mention specific product qualities, packaging, or freshness. 40-60 words. No emojis.",
+  },
+  {
+    id: "short-punchy",
+    instruction:
+      "Write ONE powerful sentence, maximum 20 words. Punchy and direct. No fluff. Like a Google Maps quick review.",
+  },
+  {
+    id: "storyteller",
+    instruction:
+      'Start with context like "I was looking for..." or "A friend recommended..." or "Tried this after seeing online...". Tell a brief story. 40-60 words.',
+  },
+  {
+    id: "hindi-mixed",
+    instruction:
+      'Write in natural Hinglish — mix Hindi and English like a Jaipur local would speak. Example tone: "Bahut accha makhana, quality top-notch thi." 30-50 words.',
+  },
+  {
+    id: "no-frills",
+    instruction:
+      'Write in a no-nonsense, matter-of-fact style. Short phrases separated by periods. Like: "Good quality. Fresh stock. Fair price. Will buy again." Under 25 words. No adjectives like amazing or wonderful.',
+  },
+];
 
-export async function POST(req: NextRequest) {
+const PRODUCT_LABELS: Record<string, string> = {
+  "raw-makhana": "Raw Phool Makhana (fox nuts)",
+  "makhana-cookies": "Makhana Cookies",
+  "dry-fruits": "Dry Fruits (Anjeer/Walnuts)",
+  "bulk-order": "Bulk / Wholesale Makhana Order",
+  multiple: "Multiple makhana and dry fruit items",
+};
+
+// --- LLM Provider abstraction ---
+
+interface LLMResult {
+  text: string;
+  provider: string;
+}
+
+/**
+ * Try Gemini API (Google AI Studio) first.
+ * Uses x-goog-api-key header for new AQ. auth keys.
+ */
+async function tryGemini(prompt: string): Promise<LLMResult | null> {
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) return null;
+
   try {
-    const { rating, product, storeName } = await req.json();
-
-    const productLabels: Record<string, string> = {
-      "raw-makhana": "Raw Phool Makhana (fox nuts)",
-      "makhana-cookies": "Makhana Cookies (made with 60% makhana flour)",
-      "dry-fruits": "Dry Fruits (Afghan Anjeer / Premium Walnuts / Mixed Millet)",
-      "bulk-order": "Bulk / B2B Wholesale Order",
-      "multiple": "Multiple items",
-    };
-
-    const productLabel = productLabels[product as string] || "makhana and dry fruits";
-
-    const ratingGuidance = rating >= 4
-      ? "enthusiastic, mentions quality/freshness/grading/service"
-      : rating === 3
-        ? "balanced, mentions what was good AND what could reasonably improve"
-        : "polite constructive feedback — focus on what could be better without being harsh, mention the issue factually";
-
-    const prompt = `You are a helpful assistant for an Indian makhana (fox nuts) shop named "${storeName || 'Khirri'}" in Jaipur, Rajasthan.
-
-A customer rated their experience ${rating} out of 5 stars for purchasing: ${productLabel}.
-
-Write a NATURAL, genuine-sounding Google review in FIRST PERSON that:
-- Reflects the rating level ${rating}/5 honestly
-- Tone: ${ratingGuidance}
-- Naturally includes the business name "${storeName || 'Khirri'}" and "Jaipur" if it flows naturally
-- Sounds like a real customer — use conversational language, not marketing speak
-- Is 1-3 sentences, around 30-60 words
-
-IMPORTANT: Return ONLY the review text. No preamble, no quotes, no explanation. Just 1-3 sentences of review.`;
-
-    const response = await fetch(GEMINI_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.8,
-          maxOutputTokens: 150,
-          topP: 0.9,
+    const res = await fetch(
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-goog-api-key": apiKey,
         },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: prompt }] }],
+          generationConfig: {
+            temperature: 1.2,
+            maxOutputTokens: 200,
+            topP: 0.95,
+            topK: 50,
+          },
+        }),
+      }
+    );
+
+    const data = await res.json();
+
+    if (!res.ok || data.error) {
+      console.warn(
+        `Gemini failed (${res.status}):`,
+        data.error?.message || "Unknown error"
+      );
+      return null;
+    }
+
+    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text?.trim();
+    if (text) {
+      return { text: text.replace(/^["']|["']$/g, ""), provider: "gemini" };
+    }
+
+    return null;
+  } catch (err) {
+    console.warn("Gemini request failed:", err);
+    return null;
+  }
+}
+
+/**
+ * Fallback: OpenCode (DeepSeek V4 Flash — free, reasoning model).
+ * Handles reasoning models that put text in reasoning_content when
+ * content is null due to token limits. Uses higher max_tokens.
+ */
+async function tryOpenCode(prompt: string): Promise<LLMResult | null> {
+  const apiKey = process.env.OPENCODE_API_KEY;
+  if (!apiKey) return null;
+
+  try {
+    const res = await fetch("https://opencode.ai/zen/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "deepseek-v4-flash-free",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a Google review writing assistant. Output ONLY the final review text. No thinking, no analysis, no word count, no quotes around the text. Just the review sentences directly.",
+          },
+          { role: "user", content: prompt },
+        ],
+        temperature: 1.0,
+        max_tokens: 600,
       }),
     });
 
-    const data = await response.json();
+    const data = await res.json();
+    const choice = data?.choices?.[0];
 
-    let suggestion = "";
-    if (data?.candidates?.[0]?.content?.parts?.[0]?.text) {
-      suggestion = data.candidates[0].content.parts[0].text.trim();
-    } else {
-      suggestion = getFallbackSuggestion(rating, product);
+    if (!choice) {
+      console.warn("OpenCode returned no choices:", JSON.stringify(data));
+      return null;
+    }
+
+    // Primary: check content field
+    let text = choice.message?.content?.trim();
+
+    // Fallback: reasoning models put the draft in reasoning_content
+    if (!text && choice.message?.reasoning_content) {
+      const reasoning = choice.message.reasoning_content;
+      // Extract the review from reasoning — it's usually in quotes
+      const quoteMatch = reasoning.match(/"([^"]{15,150})"/);
+      if (quoteMatch) {
+        text = quoteMatch[1];
+      }
+    }
+
+    // Second fallback: reasoning_details array
+    if (!text && choice.message?.reasoning_details?.[0]?.text) {
+      const reasoning = choice.message.reasoning_details[0].text;
+      const quoteMatch = reasoning.match(/"([^"]{15,150})"/);
+      if (quoteMatch) {
+        text = quoteMatch[1];
+      }
+    }
+
+    if (text) {
+      return {
+        text: text.replace(/^["']|["']$/g, ""),
+        provider: "opencode",
+      };
+    }
+
+    console.warn("OpenCode returned no usable text");
+    return null;
+  } catch (err) {
+    console.warn("OpenCode request failed:", err);
+    return null;
+  }
+}
+
+/**
+ * Second fallback: OpenRouter (auto-routes to available free model).
+ */
+async function tryOpenRouter(prompt: string): Promise<LLMResult | null> {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+  if (!apiKey) return null;
+
+  try {
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "openrouter/free",
+        messages: [
+          {
+            role: "system",
+            content:
+              "You are a Google review writing assistant. Output ONLY the final review text. No thinking, no analysis, no quotes. Just the review sentences.",
+          },
+          { role: "user", content: prompt },
+        ],
+        temperature: 1.0,
+        max_tokens: 600,
+      }),
+    });
+
+    const data = await res.json();
+    const choice = data?.choices?.[0];
+
+    if (!choice) {
+      console.warn("OpenRouter returned no choices:", JSON.stringify(data));
+      return null;
+    }
+
+    let text = choice.message?.content?.trim();
+
+    // Handle reasoning models on OpenRouter too
+    if (!text && choice.message?.reasoning) {
+      const quoteMatch = choice.message.reasoning.match(/"([^"]{15,150})"/);
+      if (quoteMatch) text = quoteMatch[1];
+    }
+    if (
+      !text &&
+      choice.message?.reasoning_details?.[0]?.text
+    ) {
+      const quoteMatch =
+        choice.message.reasoning_details[0].text.match(/"([^"]{15,150})"/);
+      if (quoteMatch) text = quoteMatch[1];
+    }
+
+    if (text) {
+      return {
+        text: text.replace(/^["']|["']$/g, ""),
+        provider: "openrouter",
+      };
+    }
+
+    return null;
+  } catch (err) {
+    console.warn("OpenRouter request failed:", err);
+    return null;
+  }
+}
+
+// --- Main handler ---
+
+export async function POST(req: NextRequest) {
+  try {
+    const { rating, product, chips, storeName } = await req.json();
+
+    const productLabel =
+      PRODUCT_LABELS[product as string] || "makhana and dry fruits";
+
+    // --- 1. Fetch last 15 generated reviews from Firestore as anti-examples ---
+    let previousReviews: string[] = [];
+    try {
+      const snapshot = await db
+        .collection("generated-reviews")
+        .orderBy("createdAt", "desc")
+        .limit(15)
+        .get();
+
+      previousReviews = snapshot.docs
+        .map((doc) => doc.data().text)
+        .filter(Boolean);
+    } catch (err) {
+      console.warn("Could not fetch previous reviews from Firestore:", err);
+    }
+
+    // --- 2. Pick a random persona ---
+    const persona = PERSONAS[Math.floor(Math.random() * PERSONAS.length)];
+
+    // --- 3. Build the chip context ---
+    const chipContext =
+      Array.isArray(chips) && chips.length > 0
+        ? `The customer specifically highlighted these aspects of their experience:\n${chips.map((c: string) => `- ${c}`).join("\n")}\n\nNaturally incorporate THESE specific points into the review.`
+        : "The customer did not specify particular highlights. Write a general review.";
+
+    // --- 4. Build anti-example block ---
+    const antiExampleBlock =
+      previousReviews.length > 0
+        ? `CRITICAL — UNIQUENESS REQUIREMENT:
+The following ${previousReviews.length} reviews ALREADY EXIST for this business. Your review MUST be completely different from ALL of them — different sentence structure, different opening words, different vocabulary, different length. Do NOT reuse any phrases, sentence patterns, or descriptive words from these:
+
+${previousReviews.map((r, i) => `${i + 1}. "${r}"`).join("\n")}
+
+Write something that sounds NOTHING like the above.`
+        : "";
+
+    // --- 5. Rating-based tone guidance ---
+    const toneGuidance =
+      rating >= 4
+        ? "positive and genuine — share what was good"
+        : rating === 3
+          ? "balanced — mention both good aspects and what could improve"
+          : "honest constructive feedback — be polite but factual about what was lacking";
+
+    // --- 6. Build the full prompt ---
+    const prompt = `Write a Google review for "${storeName || "Khirri Phool Makhana"}", a makhana and dry fruits shop in Jaipur, Rajasthan.
+
+CUSTOMER CONTEXT:
+- Purchased: ${productLabel}
+- Rating given: ${rating}/5 stars
+- Tone: ${toneGuidance}
+
+${chipContext}
+
+WRITING STYLE FOR THIS REVIEW:
+${persona.instruction}
+
+${antiExampleBlock}
+
+RULES:
+- Write in FIRST PERSON as the customer
+- Sound like a REAL person, not a marketing copy
+- Do NOT use words like "exceptional", "unparalleled", "delightful", "impeccable" — use everyday language
+- You may or may not mention the business name — vary it
+- You may or may not mention "Jaipur" — vary it
+- Do NOT start with "I recently" — vary your openings
+- Include small imperfections that make it feel human (like a missing comma or casual phrasing)
+
+Return ONLY the review text. No quotes, no preamble, no explanation.`;
+
+    // --- 7. Try providers in order: Gemini → OpenCode → OpenRouter ---
+    console.log(`[Review] Generating with persona: ${persona.id}`);
+
+    let result: LLMResult | null = null;
+
+    // Try Gemini first (best quality when credits available)
+    result = await tryGemini(prompt);
+
+    // Fallback to OpenCode DeepSeek (free)
+    if (!result) {
+      console.log("[Review] Gemini failed/unavailable, trying OpenCode...");
+      result = await tryOpenCode(prompt);
+    }
+
+    // Fallback to OpenRouter (free auto-routing)
+    if (!result) {
+      console.log("[Review] OpenCode failed, trying OpenRouter...");
+      result = await tryOpenRouter(prompt);
+    }
+
+    if (!result || !result.text) {
+      console.error("[Review] All providers failed to generate a review");
+      return NextResponse.json({
+        suggestion: "",
+        error: "All AI providers are temporarily unavailable. Please try again.",
+      });
+    }
+
+    const suggestion = result.text;
+    console.log(
+      `[Review] Generated via ${result.provider}: "${suggestion.substring(0, 50)}..."`
+    );
+
+    // --- 8. Store the generated review in Firestore ---
+    try {
+      await db.collection("generated-reviews").add({
+        text: suggestion,
+        rating,
+        product,
+        chips: Array.isArray(chips) ? chips : [],
+        persona: persona.id,
+        provider: result.provider,
+        createdAt: new Date().toISOString(),
+      });
+    } catch (err) {
+      console.warn("Could not store review in Firestore:", err);
     }
 
     return NextResponse.json({ suggestion });
   } catch (error) {
     console.error("Review suggestion error:", error);
-    return NextResponse.json({
-      suggestion: getFallbackSuggestion(5, "multiple"),
-    });
+    return NextResponse.json(
+      { suggestion: "", error: "Failed to generate review" },
+      { status: 500 }
+    );
   }
-}
-
-function getFallbackSuggestion(rating: number, product: string): string {
-  const templates: Record<string, Record<number, string>> = {
-    "raw-makhana": {
-      5: "Loved the premium quality of raw Phool Makhana from Khirri! The suta grading is transparent and the freshness is unmatched. Highly recommend for authentic Bihar-sourced makhana in Jaipur.",
-      4: "Great quality raw makhana from Khirri. Good grading and fresh stock. Will definitely order again.",
-      3: "Decent quality raw makhana. Could improve on packaging but overall satisfied with the product.",
-      2: "The makhana quality was average. Expected better grading consistency for the price. Hope they improve.",
-      1: "Was not satisfied with the makhana quality this time. The grading wasn't as expected. Hope they address this.",
-    },
-    "makhana-cookies": {
-      5: "The makhana cookies from Khirri are delicious! Made with 60% makhana flour, they're healthy and tasty. Perfect guilt-free snack. Highly recommend!",
-      4: "Really good makhana cookies! Healthy, tasty, and great for evening snacks.",
-      3: "Cookies are good but could be crunchier. Nice healthy alternative though.",
-      2: "The cookies were okay but didn't taste as fresh. Expected better quality for the price.",
-      1: "Wasn't happy with the cookies. They lacked crunch and flavor. Hope improvements are made.",
-    },
-    "dry-fruits": {
-      5: "Premium quality dry fruits from Khirri! The Afghan Anjeer and walnuts are fresh and well-packaged. Best dry fruits shop in Vaishali Nagar, Jaipur!",
-      4: "Good quality dry fruits. Fresh stock and fair pricing. Will visit again.",
-      3: "OK quality dry fruits. Could be better but acceptable for the price.",
-      2: "The dry fruits were average quality. Some items didn't taste fresh. Room for improvement.",
-      1: "Not happy with the dry fruit quality. Expected better for the price paid.",
-    },
-    "bulk-order": {
-      5: "Best bulk Makhana supplier in Jaipur! Khirri provided excellent quality at competitive wholesale prices. Timely delivery and great communication.",
-      4: "Good bulk makhana supply. Quality was consistent and delivery was on time.",
-      3: "Adequate bulk supply. Met basic expectations but room for improvement.",
-      2: "The bulk order was okay but delivery was delayed. Quality was mixed. They need to improve consistency.",
-      1: "Disappointed with the bulk order. Quality issues and delayed delivery. Hope they fix these issues.",
-    },
-    "multiple": {
-      5: "Khirri is my go-to shop for makhana and dry fruits in Jaipur! Great variety, premium quality, and excellent customer service. Highly recommend visiting their Vaishali Nagar store.",
-      4: "Good experience shopping at Khirri. Nice product range and quality. Will visit again.",
-      3: "Average experience. Products were OK but service could be improved.",
-      2: "Mixed experience at Khirri. Some products were good, others not so much. Hope they work on consistency.",
-      1: "Not a great experience. Products and service both need improvement. Hope things get better.",
-    },
-  };
-
-  const productTemplates = templates[product as string];
-  return productTemplates?.[rating] || templates["multiple"]?.[rating] || "";
 }

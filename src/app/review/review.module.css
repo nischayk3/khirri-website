@@ -151,6 +151,78 @@
   border: 2px solid rgba(255, 105, 0, 0.2);
 }
 
+/* ===== Chip Grid (NEW) ===== */
+.chipGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  width: 100%;
+  margin: 0.25rem 0;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.5rem 0.9rem;
+  border: 1.5px solid #e0d5c8;
+  border-radius: 50px;
+  background: white;
+  color: #5c3a1e;
+  font-size: 0.82rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  border-color: #e5b869;
+  background: #fdf6ec;
+}
+
+.chip:active {
+  transform: scale(0.96);
+}
+
+.chipSelected {
+  border-color: #ff6900;
+  background: #fff3e8;
+  color: #c45000;
+  font-weight: 600;
+  box-shadow: 0 0 0 1px rgba(255, 105, 0, 0.15);
+}
+
+/* ===== Photo Tip (NEW) ===== */
+.photoTip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: #8b7355;
+  background: #faf5ee;
+  padding: 0.65rem 1rem;
+  border-radius: 10px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #f0e6d6;
+}
+
+.photoTip span {
+  line-height: 1.4;
+}
+
+/* ===== Thank You Message (NEW) ===== */
+.thankYouMessage {
+  font-size: 1rem;
+  color: #6b5744;
+  margin: 0;
+  max-width: 380px;
+  line-height: 1.6;
+}
+
 /* Review Box */
 .reviewBox {
   width: 100%;
@@ -228,29 +300,9 @@
   background: #fff8f0;
 }
 
-/* Copy Button */
-.copyBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: none;
-  border: 1px solid #e5b869;
-  color: #5c3a1e;
-  font-size: 0.75rem;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: inherit;
-  padding: 6px 12px;
-  border-radius: 8px;
-  transition: all 0.2s;
-  margin-top: 6px;
-  float: right;
-}
-
-.copyBtn:hover {
-  background: #fdf6ec;
-  border-color: #ff6900;
-  color: #ff6900;
+.regenerateBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 /* Copied Badge */
@@ -376,39 +428,6 @@
   margin: 0.5rem 0;
 }
 
-.couponBox {
-  background: linear-gradient(135deg, #fdf6ec 0%, #f5e6d0 100%);
-  border: 2px dashed #e5b869;
-  border-radius: 16px;
-  padding: 1.5rem;
-  width: 100%;
-  margin: 0.5rem 0;
-}
-
-.couponLabel {
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: #9a8070;
-  text-transform: uppercase;
-  margin: 0 0 0.5rem;
-}
-
-.couponCode {
-  font-family: 'Playfair Display', Georgia, serif;
-  font-size: 2rem;
-  font-weight: 800;
-  color: #3d2410;
-  letter-spacing: 0.08em;
-  margin: 0 0 0.5rem;
-}
-
-.couponDesc {
-  font-size: 0.85rem;
-  color: #6b5744;
-  margin: 0;
-}
-
 @media (max-width: 480px) {
   .main {
     padding: 1rem;
@@ -432,5 +451,14 @@
 
   .starBtn {
     padding: 2px;
+  }
+
+  .chip {
+    font-size: 0.78rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  .chipGrid {
+    gap: 0.4rem;
   }
 }
